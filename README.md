@@ -140,3 +140,58 @@ Definição: Locais de borda são pontos de presença da AWS localizados em áre
 Características:
 Usados para distribuição de conteúdo através do Amazon CloudFront (serviço de entrega de conteúdo da AWS).
 Não são zonas de disponibilidade completas; são mais focadas na entrega rápida de conteúdo.
+
+---
+
+## Planejamento para falhas
+
+O "Planejamento de Falhas" proposto pela AWS (Amazon Web Services) é uma abordagem que incentiva os usuários a projetarem suas aplicações para resistir a falhas em todos os níveis, incluindo armazenamento, computação e banco de dados. O uso de múltiplas Zonas de Disponibilidade (AZs) é fundamental nesse planejamento para garantir alta disponibilidade e tolerância a falhas. O objetivo do Planejamento de Falhas da AWS é criar arquiteturas que possam continuar a operar mesmo em face de falhas em componentes individuais. Ao distribuir recursos em múltiplas Zonas de Disponibilidade, os usuários podem reduzir o impacto de falhas locais e melhorar a resiliência de suas aplicações. Aqui está uma visão geral em cada aspecto:
+
+### Armazenamento:
+
+A AWS oferece serviços de armazenamento altamente duráveis e redundantes, como o Amazon S3 (Simple Storage Service) e o Amazon EBS (Elastic Block Store).
+Ao usar o S3, os dados são automaticamente distribuídos em várias instalações e dispositivos de armazenamento em uma região, proporcionando durabilidade e alta disponibilidade.
+Para volumes de armazenamento associados a instâncias EC2, o Amazon EBS permite a replicação de volumes em diferentes AZs.
+
+### Computação:
+
+Distribuir instâncias EC2 (servidores virtuais) em múltiplas Zonas de Disponibilidade (AZs) é uma prática recomendada. Isso ajuda a garantir que a falha em uma AZ não afete a disponibilidade da aplicação como um todo.
+O uso de Auto Scaling e grupos de Auto Scaling pode ajudar a garantir que o número de instâncias seja ajustado automaticamente com base na demanda, melhorando a resiliência.
+
+### Banco de Dados:
+
+Ao utilizar serviços de banco de dados gerenciados, como o Amazon RDS (Relational Database Service), é possível configurar instâncias de banco de dados em várias Zonas de Disponibilidade.
+A replicação de banco de dados entre Zonas de Disponibilidade ajuda a garantir a disponibilidade contínua dos dados em caso de falha em uma Zona.
+
+---
+
+## Responsabilidade
+
+<img src="https://d2908q01vomqb2.cloudfront.net/d435a6cdd786300dff204ee7c2ef942d3e9034e2/2020/08/26/1.jpg" width=100% align=center>
+
+## Modelo de Custo
+
+A AWS (Amazon Web Services) oferece uma variedade de modelos de preços para atender às diferentes necessidades dos usuários. Os três principais modelos de preços são: Pay-as-You-Go, Savings Plans e Reserved Instances. Aqui está uma breve descrição de cada um deles:
+
+### Pay-as-You-Go (Pague Conforme o Uso):
+
+- **Descrição:** Neste modelo, os usuários pagam pelos recursos de computação, armazenamento, e outros serviços da AWS com base no que realmente consomem. Não há compromissos de longo prazo e os custos são calculados por hora ou por segundo, dependendo do serviço.
+- **Características:**
+    - Ideal para cargas de trabalho com requisitos dinâmicos e que podem variar ao longo do tempo.
+    - Flexibilidade para escalar para cima ou para baixo conforme a demanda.
+    - Não requer compromissos a longo prazo.
+
+### Savings Plans (Planos de Economia):
+
+- **Descrição:** Os Savings Plans oferecem uma opção de economia significativa em comparação com o Pay-as-You-Go, exigindo um compromisso de uso consistente (medido em $/hora) por um período de 1 ou 3 anos. Os usuários obtêm uma economia significativa em troca do compromisso de uso contínuo.
+- **Características:**
+    - Flexibilidade para escolher entre Savings Plans para instâncias EC2 ou para uso geral.
+    - Adapta-se a cargas de trabalho previsíveis e consistentes.
+
+### Reserved Instances (Instâncias Reservadas):
+
+- **Descrição:** No modelo Reserved Instances, os usuários comprometem-se a usar uma capacidade específica (em termos de instâncias EC2) por um período de 1 ou 3 anos, em troca de um desconto significativo em comparação com o modelo Pay-as-You-Go.
+- **Características:**
+- Oferece a maior economia, mas requer um compromisso a longo prazo.
+- Ideal para cargas de trabalho estáveis e previsíveis.
+- Permite escolher entre instâncias padrão, instâncias conversíveis ou instâncias de economia de capacidade.
