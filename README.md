@@ -228,9 +228,9 @@ A AWS (Amazon Web Services) oferece uma variedade de modelos de preços para ate
 
 - **Descrição:** No modelo Reserved Instances, os usuários comprometem-se a usar uma capacidade específica (em termos de instâncias EC2) por um período de 1 ou 3 anos, em troca de um desconto significativo em comparação com o modelo Pay-as-You-Go.
 - **Características:**
-- Oferece a maior economia, mas requer um compromisso a longo prazo.
-- Ideal para cargas de trabalho estáveis e previsíveis.
-- Permite escolher entre instâncias padrão, instâncias conversíveis ou instâncias de economia de capacidade.
+    - Oferece a maior economia, mas requer um compromisso a longo prazo.
+    - Ideal para cargas de trabalho estáveis e previsíveis.
+    - Permite escolher entre instâncias padrão, instâncias conversíveis ou instâncias de economia de capacidade.
 
 # Getting Started with Storage
 
