@@ -20,6 +20,17 @@
                 <p>Este curso abrange aspectos essenciais das práticas de vendas na AWS, fornecendo insights valiosos sobre como abordar clientes, destacar o valor comercial, superar objeções comuns relacionadas à nuvem e realizar vendas conjuntas eficazes com a AWS. Os participantes ganham conhecimentos sobre os fundamentos da computação em nuvem, compreendem o valor comercial da AWS e aprendem estratégias práticas para impulsionar o sucesso nas vendas e parcerias de negócios na plataforma.</p>
             </td>
         </tr>
+        <tr align="center">
+            <td>
+                <img width="150px" src="https://images.credly.com/size/680x680/images/81f903ed-c3a1-4f4b-afcd-e03331a5b12c/image.png">
+            </td>
+            <td>
+                <a href="#technical-accredited">Technical Accredited</a>
+            </td>
+            <td>
+                <p>O curso oferece conhecimentos técnicos fundamentais sobre computação em nuvem, infraestrutura global, serviços, soluções, migração e segurança da AWS, direcionado aos parceiros da AWS. Após a conclusão, os participantes recebem o credenciamento como AWS Technical Professional.</p>
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -392,3 +403,74 @@ A AWS oferece oportunidades de financiamento para acelerar o desenvolvimento com
 - Disponível na Central AWS Partner, com transparência de status, notificações e visibilidade de relatórios.
 
 Para mais informações e detalhes, acesse os recursos disponíveis no [Portal de Financiamento de Parceiros AWS](link_para_o_portal).
+
+
+# Technical Accredited
+
+<div align=center>
+    <img width=300px src="https://images.credly.com/size/680x680/images/81f903ed-c3a1-4f4b-afcd-e03331a5b12c/image.png" alt="sales accredited badge">
+</div>
+
+## Beneficios da computação em nuvem
+Agilidade, elasticidade, economia de custo, implantação global em minutos
+
+## Infraestrutura Global da AWS
+
+## Tecnologias Essenciais
+
+A AWS tem vários serviços de infraestrutura no bloco de criação em cada uma das categorias de computação, armazenamento, banco de dados, segurança, gerenciamento e rede. Os produtos e serviços da AWS oferecem aos clientes um alto grau de flexibilidade da arquitetura. Os clientes da AWS usam esses produtos e serviços em uma grande variedade de cargas de trabalho e aplicativos, incluindo aplicativos web e móveis, bem como data warehousing, processamento, armazenamento e arquivamento de dados. 
+
+<div align=center>
+    <img src="https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1704481200/8tfuOFgQ3kz5k2TQtDybUQ/tincan/954352_1667592600_p1gh22vk081fuj1q0ube8bigok14_zip/assets/ESMFx4lGdGCwCWOb_uh4N1fVjIyfI1SKf.png">
+</div>
+
+### Computação
+
+### Armazenamento
+
+### Bancos de dados
+
+### Redes
+
+### Segurança
+
+## Interfaces AWS
+
+Os usuários da AWS podem criar e gerenciar recursos na plataforma de três formas. Todas as três opções são criadas em uma interface de programação de aplicativo (API) comum, semelhante ao REST, que serve como base da AWS. 
+
+O AWS Management Console fornece uma interface gráfica avançada para a maioria dos recursos oferecidos pela AWS. Ele facilita o gerenciamento de nuvem de todos os aspectos da conta da AWS do cliente, incluindo o monitoramento dos gastos mensais por serviço, o gerenciamento de credenciais de segurança ou até mesmo a configuração de novos usuários do IAM.
+
+A AWS Command Line Interface (AWS CLI) fornece um conjunto de utilitários que podem ser executados por meio de um programa de comando no Linux, Mac ou Windows. A CLI é uma ferramenta de código aberto que fornece comandos para interagir com os serviços da AWS.
+
+Os AWS software development kits (SDKs) são pacotes que dão acesso à AWS em uma variedade de linguagens de programação populares. A AWS gerencia a infraestrutura como código usando os SDKs e as APIs subjacentes a eles. Esses SDKs específicos da linguagem contêm APIs com as quais os clientes podem incorporar a grande variedade de serviços de nuvem AWS em seu código sem escrever as funções por conta própria.
+
+<div align=center>
+    <img src="https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1704481200/8tfuOFgQ3kz5k2TQtDybUQ/tincan/954352_1667592600_p1gh22vk081fuj1q0ube8bigok14_zip/assets/EFk1i6WQ9cHIlxac_EGRbt8OdlDTpvHtI.png">
+</div>
+
+## Well Architeted Framework
+
+### Otimização de custos
+
+Uma das muitas diferenças entre um ambiente on-premises e a AWS é que na AWS, os clientes pagam somente pelo que utilizam. A otimização de custos também está garantindo que os clientes paguem apenas pelo que precisam, executando a quantidade exata de recursos necessários para fazer seus negócios. A AWS identificou quatro práticas recomendadas principais em otimização de custos:
+
+Dimensionamento correto de instâncias
+O dimensionamento correto é o processo de avaliar os recursos implantados e buscar oportunidades de redução sempre que possível. Por exemplo, se uma instância de aplicativo estiver subutilizando consistentemente sua RAM e CPU, alternar para uma instância menor poderá oferecer economias significativas enquanto mantém o mesmo desempenho.
+Aumento da elasticidade do aplicativo
+Um exemplo é usar o auto scaling para garantir que o número correto de instâncias esteja disponível para lidar com a carga de trabalho de um aplicativo. Aumentar a quantidade durante a demanda alta e reduzi-la durante a demanda baixa.
+Escolha do modelo correto de preço
+Um exemplo é usar instâncias reservadas para cargas de trabalho que precisam ser executadas a maior parte ou o tempo todo, como ambientes de produção. Isso pode ter um impacto significativo na economia em comparação com o modelo sob demanda; em alguns casos, até 75 por cento.
+Otimização do armazenamento
+Um exemplo é a classe de armazenamento S3 Intelligent-Tiering, projetada para otimizar os custos ao mover os dados automaticamente para a camada de armazenamento mais econômica.
+
+##
+
+<div align=center>
+    <img src="https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1704492000/Ym2GhiPErBINjTRoPeVJ4g/tincan/954352_1667592600_p1gh22vk081fuj1q0ube8bigok14_zip/assets/KRDY6DH8wu3zzR7J_QMq9ZnNijd1gVKGy.png">
+</div>
+
+As conversas voltadas para o cliente se enquadram em três categorias distintas, com base em marcos típicos do ciclo de vendas.
+
+A descoberta é a reunião de coleta de informações para ajudar você a compreender os desafios dos clientes.
+Depois que todas as informações necessárias que identificam as metas e os pontos problemáticos do cliente forem coletadas, você se reunirá com o cliente novamente para apresentar suas descobertas e propor uma ou mais soluções da AWS. Na verdade, isso pode acabar se tornando várias reuniões, dependendo da necessidade de ajustes na solução.
+Assim que o cliente concordar com uma solução em potencial, você perguntará se ele gostaria de avançar com uma prova de conceito (POC), na qual avaliará a solução em seu próprio ambiente.
