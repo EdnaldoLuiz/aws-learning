@@ -1,76 +1,7 @@
-# aws-learning
-
-# Índice
-
-<table align="center">
-    <thead>
-        <tr>
-            <th>Badge</th>
-            <th width=200px>Tema</th>
-            <th>Descrição</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr align="center">
-            <td>
-                <img width="150px" src="https://images.credly.com/images/8d67bbf4-128b-4141-b5f1-1bc61bbfbaa6/image.png" alt="cloud 101 badge">
-            </td>
-            <td>
-                <a href="#cloud-101">Cloud 101</a>
-            </td>
-            <td>
-                <p>Neste curso introdutório, os participantes adquirem conhecimentos fundamentais sobre computação em nuvem. Ao final, serão capazes de definir computação em nuvem, comparar modelos e serviços, entender a infraestrutura global da AWS, e praticar o uso de serviços essenciais.</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img width="150px" src="https://images.credly.com/size/340x340/images/5bf37709-4b69-4cdc-9edc-af7b3370d427/image.png" alt="cloud 101 badge">
-            </td>
-             <td>
-                <a href="#getting-started-with-storage">Getting Started with Storage</a>
-            </td>
-            <td>
-                <p>Este curso destaca as opções de armazenamento na AWS, com foco no Amazon S3. Os participantes aprendem sobre tipos de armazenamento, características do Amazon S3, configuração de buckets, upload de objetos, segurança, e casos de uso. Ideal para iniciantes, cobre desde conceitos básicos até a criação de um site estático usando o Amazon S3.</p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <img width="150px" src="https://images.credly.com/images/9358115e-ead7-47c2-91e2-165b6a650a1b/image.png">
-            </td>
-             <td>
-                <a href="#getting-started-with-storage">Getting Started with Compute</a>
-            </td>
-            <td>
-                <p></p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
-
-
-## Por que Computação em Nuvem?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Getting Started with Storage
+<h1 align=center> Getting Started with Storage </h1>
 
 <div align=center>
-    <img width=300px src="https://images.credly.com/size/340x340/images/5bf37709-4b69-4cdc-9edc-af7b3370d427/image.png" alt="cloud 101 badge">
+    <img width=300px src="https://images.credly.com/size/340x340/images/5bf37709-4b69-4cdc-9edc-af7b3370d427/image.png" alt="Getting Started with Storage badge">
 </div>
 
 ## Tipos de Soluções de Armazenamento
