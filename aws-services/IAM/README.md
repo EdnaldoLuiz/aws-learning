@@ -1,7 +1,7 @@
 <h1 align="center">AWS Identity and Access Management (IAM)</h1>
 
 <div align="center">
-    <img width="250px" src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/aws-cloud-security/control-access-with-aws-identity-and-access-management/images/3d5ecfeab35e8dfc1eb781f7880fafc9_99-c-15-ccc-fe-5-e-4-d-8-f-bcfc-193197-b-9-dc-7-b.png" alt="AWS IAM">
+    <img width="250px" src="./../../assets/aws-services/IAM/iam.webp">
 </div>
 
 ---
