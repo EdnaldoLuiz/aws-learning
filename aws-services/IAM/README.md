@@ -1,7 +1,7 @@
 <h1 align="center"> AWS Identity and Access Management (IAM) </h1>
 
 <div align="center">
-    <img width="250px" src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/aws-cloud-security/control-access-with-aws-identity-and-access-management/images/3d5ecfeab35e8dfc1eb781f7880fafc9_99-c-15-ccc-fe-5-e-4-d-8-f-bcfc-193197-b-9-dc-7-b.png">
+    <img width="250px" src="./../../assets/aws-services/IAM/iam.webp">
 </div>
 
 ---
@@ -13,6 +13,37 @@ O **AWS Identity and Access Management (IAM)** é um serviço da Web que ajuda v
 ---
 
 ## Tópicos Principais
+
+### Tipos de políticas do IAM
+
+#### Políticas baseadas em identidade
+
+São políticas de permissões que você pode anexar a um principal ou uma identidade, como um usuário, uma função ou um grupo do IAM. Essas políticas controlam quais ações essa identidade pode realizar, em quais recursos e em que condições. As políticas baseadas em identidade podem ser categorizadas como:
+
+- **Políticas gerenciadas**
+
+    Políticas independentes baseadas em identidade que você pode anexar a vários usuários, grupos e funções em sua conta da AWS.
+- **Políticas em linha**
+    Políticas que você cria e gerencia e que são incorporadas diretamente em um único usuário, grupo ou função.
+
+#### Políticas com base em recursos
+
+São documentos de política JSON anexados a um recurso, como um bucket do Amazon Simple Storage Service (Amazon S3). Essas políticas controlam quais ações uma entidade principal pode realizar nesse recurso e em quais condições. As políticas baseadas em recurso são políticas em linha. Não há políticas baseadas em recurso gerenciadas.
+
+Ao anexar a mesma política a vários usuários do IAM, coloque os usuários em um grupo e anexe a política ao grupo. Além disso, você pode usar o simulador de políticas do IAM para testar e solucionar problemas do IAM e políticas baseadas em recursos
+
+**Exemplo de Politica baseada em Recursos:**
+
+<div align=center>
+    <img src="./../../assets/aws-services/IAM/politica-iam.webp">
+</div>
+
+A política de exemplo concede aos usuários acesso apenas ao seguintes recursos:
+
+- A tabela do Amazon DynamoDB cujo nome é representado por table-name.
+- O bucket do Amazon S3 corporativo da conta da AWS, cujo nome é representado por bucket-name e todos os objetos que ela contém
+
+A política inclui um elemento de negação explícita (“Effect”:“Deny”) com o elemento NotResource. Essa negação explícita ajuda a garantir que os usuários não possam realizar nenhuma ação da AWS nem usar recursos, exceto aqueles que foram especificados na política (mesmo que as permissões tenham sido concedidas em outra política). Uma instrução de negação explícita tem precedência sobre uma instrução de permissão.
 
 ### Usuários IAM
 
