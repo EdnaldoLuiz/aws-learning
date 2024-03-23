@@ -1,222 +1,234 @@
-<h1 align="center"> AWS Identity and Access Management (IAM) </h1>
+<h1 align="center">AWS Identity and Access Management (IAM)</h1>
 
 <div align="center">
-    <img width="250px" src="./../../assets/aws-services/IAM/iam.webp">
+    <img width="250px" src="https://res.cloudinary.com/hy4kyit2a/f_auto,fl_lossy,q_70/learn/modules/aws-cloud-security/control-access-with-aws-identity-and-access-management/images/3d5ecfeab35e8dfc1eb781f7880fafc9_99-c-15-ccc-fe-5-e-4-d-8-f-bcfc-193197-b-9-dc-7-b.png" alt="AWS IAM">
 </div>
 
 ---
 
-## O que é? 
+## 1. Introdução
 
-O **AWS Identity and Access Management (IAM)** é um serviço da Web que ajuda você a **controlar o acesso** aos recursos da AWS de forma segura. Com o IAM, é possível **gerenciar centralizadamente** permissões que controlam quais recursos da AWS os usuários poderão acessar. Você usa o IAM para controlar quem é autenticado (fez login) e autorizado (tem permissões) a usar os recursos.
-
----
-
-## Tópicos Principais
-
-### Tipos de políticas do IAM
-
-#### Políticas baseadas em identidade
-
-São políticas de permissões que você pode anexar a um principal ou uma identidade, como um usuário, uma função ou um grupo do IAM. Essas políticas controlam quais ações essa identidade pode realizar, em quais recursos e em que condições. As políticas baseadas em identidade podem ser categorizadas como:
-
-- **Políticas gerenciadas**
-
-    Políticas independentes baseadas em identidade que você pode anexar a vários usuários, grupos e funções em sua conta da AWS.
-- **Políticas em linha**
-    Políticas que você cria e gerencia e que são incorporadas diretamente em um único usuário, grupo ou função.
-
-#### Políticas com base em recursos
-
-São documentos de política JSON anexados a um recurso, como um bucket do Amazon Simple Storage Service (Amazon S3). Essas políticas controlam quais ações uma entidade principal pode realizar nesse recurso e em quais condições. As políticas baseadas em recurso são políticas em linha. Não há políticas baseadas em recurso gerenciadas.
-
-Ao anexar a mesma política a vários usuários do IAM, coloque os usuários em um grupo e anexe a política ao grupo. Além disso, você pode usar o simulador de políticas do IAM para testar e solucionar problemas do IAM e políticas baseadas em recursos
-
-**Exemplo de Politica baseada em Recursos:**
-
-<div align=center>
-    <img src="./../../assets/aws-services/IAM/politica-iam.webp">
-</div>
-
-A política de exemplo concede aos usuários acesso apenas ao seguintes recursos:
-
-- A tabela do Amazon DynamoDB cujo nome é representado por table-name.
-- O bucket do Amazon S3 corporativo da conta da AWS, cujo nome é representado por bucket-name e todos os objetos que ela contém
-
-A política inclui um elemento de negação explícita (“Effect”:“Deny”) com o elemento NotResource. Essa negação explícita ajuda a garantir que os usuários não possam realizar nenhuma ação da AWS nem usar recursos, exceto aqueles que foram especificados na política (mesmo que as permissões tenham sido concedidas em outra política). Uma instrução de negação explícita tem precedência sobre uma instrução de permissão.
-
-### Usuários IAM
-
-Os **usuários IAM** são entidades que você cria na AWS para representar a pessoa ou serviço que usa o IAM para interagir com a AWS. Cada usuário IAM tem credenciais associadas (por exemplo, **usuário e senha** ou **chaves de acesso**), que podem ser usadas para autenticar o usuário. Além disso, você pode atribuir **políticas de permissão** a um usuário IAM para conceder permissões para realizar ações específicas em recursos da AWS.
+O **AWS Identity and Access Management (IAM)** é um serviço da Web que ajuda você a **controlar o acesso** aos recursos da AWS de forma segura. Com o IAM, é possível **gerenciar centralizadamente** permissões que definem quais recursos da AWS cada usuário poderá acessar. Assim, você controla quem está autenticado (login) e autorizado (permissões) a usar os recursos da nuvem.
 
 ---
 
-### Grupos IAM
+## 2. Tipos de Políticas do IAM
 
-Os **grupos IAM** são uma maneira de **agrupar usuários IAM** que têm necessidades de permissão semelhantes. Por exemplo, você pode ter um grupo IAM chamado "Admins" que é concedido permissões administrativas completas, e outro grupo IAM chamado "Developers" que é concedido permissões mais limitadas. Quando você adiciona um usuário a um grupo IAM, o usuário **herda** as permissões do grupo.
+No IAM, as **políticas** são documentos JSON que definem permissões. Elas podem ser anexadas a identidades (como usuários, grupos e funções) ou a recursos (como buckets do S3). Abaixo, apresentamos os dois principais tipos de políticas:
 
----
+### 2.1 Políticas Baseadas em Identidade
 
-### Permissões IAM
+As políticas baseadas em identidade são anexadas a um **principal** (ou identidade), como um usuário, um grupo ou uma função. Elas controlam **quais ações** essa identidade pode executar e **em quais recursos**.
 
-As **permissões IAM** são concedidas através de **políticas de permissão**, que são documentos JSON que definem quais ações você pode realizar em quais recursos da AWS. Por exemplo, uma política de permissão pode permitir que um usuário acesse um bucket específico do Amazon S3, mas negue o acesso a todos os outros recursos da AWS. As políticas de permissão podem ser anexadas a **usuários**, **grupos** ou **funções IAM**.
+- **2.1.1 Políticas Gerenciadas**  
+  São políticas **independentes** que podem ser anexadas a **vários** usuários, grupos e funções na sua conta da AWS. Podem ser:
+  - **Gerenciadas pela AWS**: criadas e atualizadas pela própria AWS para casos de uso comuns, como acesso ao S3.
+  - **Gerenciadas pelo Cliente**: criadas e mantidas por você, permitindo flexibilidade total na definição de permissões.
 
-- **Exemplo:** JSON usado para a criação de permissões em um Bucket S3 chamado **my_bucket**
+- **2.1.2 Políticas Em Linha**  
+  São políticas **embutidas diretamente** em um único usuário, grupo ou função.  
+  - **Escopo restrito**: usadas em cenários muito específicos, pois **não podem** ser reutilizadas em outras identidades.
+  - **Gerenciamento isolado**: todas as alterações ocorrem na entidade em que a política está embutida.
 
-  ```json
-  {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Effect": "Allow",
-              "Action": [
-                  "s3:PutObject",
-                  "s3:GetObject",
-                  "s3:DeleteObject"
-              ],
-              "Resource": "arn:aws:s3:::my_bucket/*"
-          }
-      ]
-  }
-  ```
-
-  - `s3:PutObject` - Criação
-  - `s3:GetObject` - Leitura
-  - `s3:DeleteObject` - Remoção
-
-  > **Obs:** o `/*` no final do ARN do recurso significa que a política se aplica a todos os objetos dentro do bucket.
-
-#### Resource-based policies
-
-Além das políticas baseadas em identidade (anexadas a usuários, grupos ou funções), existem também as **resource-based policies**, que são anexadas diretamente aos recursos, como um bucket do S3 ou uma fila do SQS. Isso permite que você **controle o acesso** ao recurso diretamente, definindo quem pode acessá-lo e como.
+#### Observação sobre Boas Práticas
+- Ao precisar anexar a mesma política a vários usuários do IAM, é mais prático colocá-los em **um grupo** e anexar a política ao grupo, em vez de replicar a política em cada usuário.
 
 ---
 
-### Multi-Factor Authentication (MFA)
+### 2.2 Políticas Baseadas em Recursos
 
-**MFA**, ou Multi-Factor Authentication, é um método de autenticação que requer a validação de **duas ou mais evidências** (fatores) independentes para verificar a identidade do usuário. Esses fatores podem ser:
-- Algo que o usuário sabe (senha, PIN);
-- Algo que o usuário tem (token físico ou app de autenticação);
-- Algo que é inerente ao usuário (impressão digital, reconhecimento facial).
+São anexadas **diretamente** a um recurso (por exemplo, um bucket do Amazon S3 ou uma fila do SQS). Essas políticas definem **quem** (identidades ou contas externas) pode executar ações naquele recurso em particular e **em quais condições**.
 
-**Benefícios no ambiente AWS:**
-- **Segurança aprimorada:** O MFA protege contra phishing, ataques de força bruta e outras ameaças.
-- **Conformidade:** Auxilia na aderência a requisitos de conformidade (GDPR, PCI-DSS, etc.).
-- **Flexibilidade:** Suporte a dispositivos de hardware MFA, aplicativos de autenticação móvel e SMS.
-- **Proteção de recursos críticos:** Exigir MFA para a execução de ações específicas na AWS (exemplo: exclusão de buckets S3).
+- **Exemplo de Política Baseada em Recursos (DynamoDB + S3)**
 
----
+  <div align="center">
+      <img src="./../../assets/aws-services/IAM/politica-iam.webp" alt="Exemplo de Política Baseada em Recursos">
+  </div>
 
-### Funções IAM
-
-As **funções IAM** são usadas para delegar permissões a serviços da AWS ou contas externas, permitindo que os serviços realizem ações **em nome de usuários ou sistemas** sem a necessidade de credenciais permanentes.
-
-- **Casos de Uso:**
-  - Execução de aplicativos sem expor chaves de acesso ou senhas (ex: AWS Lambda).
-  - Conexões entre contas AWS ou até mesmo com **serviços externos** (AssumeRole).
+  Nesta política de exemplo (em formato JSON), a entidade principal obtém acesso **somente** aos recursos listados:
   
-- **Exemplo de Política para Função IAM:**
-  ```json
-  {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Effect": "Allow",
-              "Action": "ec2:DescribeInstances",
-              "Resource": "*"
-          }
-      ]
-  }
-  ```
+  - A tabela do Amazon DynamoDB chamada `table-name`.
+  - O bucket do Amazon S3 chamado `bucket-name` e todos os objetos nele contidos.
 
-#### Funções com External ID
-
-Quando você precisa permitir que uma **entidade externa** (outra conta AWS ou serviço de terceiros) assuma uma função na sua conta, pode usar o **External ID** para garantir que somente essa entidade confiável possa usar a função.
+  Além disso, há um elemento `"Effect": "Deny"` com `NotResource`, que **nega explicitamente** qualquer outra ação ou recurso que não esteja declarado como permitido. Essa **negação explícita** tem precedência sobre qualquer permissão concedida em outra política.
 
 ---
 
-### Políticas Gerenciadas vs. Políticas Inline
+## 3. Usuários IAM
 
-- **Políticas Gerenciadas:**
-  - Criadas e mantidas pela AWS ou pelo cliente.
-  - **Reutilizáveis** para vários usuários, grupos ou funções.
-  - Fáceis de **versionar** e **atualizar**.
-
-- **Políticas Inline:**
-  - **Criadas diretamente** para um usuário, grupo ou função específicos.
-  - **Não podem** ser reutilizadas em outras entidades.
-  - Geralmente usadas em casos muito específicos e com escopo menor.
+Os **usuários IAM** são entidades que você cria para representar pessoas ou serviços que interagem com a AWS. Cada usuário possui credenciais (como **usuário e senha** ou **chaves de acesso**), e você pode atribuir **políticas** para definir o que cada usuário pode ou não fazer.  
 
 ---
 
-### IAM Access Analyzer
+## 4. Grupos IAM
 
-O **IAM Access Analyzer** ajuda a identificar recursos da AWS **acessíveis publicamente** ou de fora da conta, garantindo segurança proativa.
+Os **grupos IAM** servem para **agrupar usuários** com necessidades de permissão semelhantes, facilitando o gerenciamento:
+- Exemplos:
+  - **Admins**: permissões administrativas completas.
+  - **Developers**: permissões de desenvolvimento mais limitadas.
+- Ao adicionar um usuário a um grupo, ele **herda** automaticamente as permissões do grupo.
+
+---
+
+## 5. Permissões IAM
+
+As permissões no IAM são concedidas por meio de **políticas**. Abaixo, um exemplo de política de permissão para um bucket S3:
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::my_bucket/*"
+        }
+    ]
+}
+```
+
+- `s3:PutObject` - Criação  
+- `s3:GetObject` - Leitura  
+- `s3:DeleteObject` - Remoção  
+
+> **Observação:** o `/*` no final do ARN do recurso significa que a política se aplica a todos os objetos do bucket.
+
+---
+
+## 6. Multi-Factor Authentication (MFA)
+
+O **MFA** (Multi-Factor Authentication) adiciona uma camada extra de segurança ao exigir dois ou mais fatores para autenticação:
+- **Algo que você sabe** (senha, PIN);
+- **Algo que você tem** (dispositivo físico, app de autenticação);
+- **Algo que você é** (impressão digital, reconhecimento facial).
+
+**Benefícios:**
+- Maior proteção contra ataques de phishing e força bruta.
+- Atendimento a requisitos de conformidade.
+- Pode ser exigido para ações críticas (como exclusões de recursos).
+
+---
+
+## 7. Funções IAM
+
+As **funções IAM** delegam permissões a serviços da AWS ou contas externas, permitindo que eles executem ações **em seu nome** sem precisar expor credenciais permanentes.
 
 - **Casos de Uso:**
-  - Detectar buckets S3 públicos acidentalmente.
-  - Revisar permissões em contas vinculadas ou recursos que possam estar expostos.
+  - AWS Lambda: execução de código sem inserir chaves de acesso.
+  - Conexões entre contas (AssumeRole).
+  - Serviços de terceiros, usando **External ID** para controle adicional.
+
+**Exemplo de Política para Função IAM:**
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "ec2:DescribeInstances",
+            "Resource": "*"
+        }
+    ]
+}
+```
 
 ---
 
-### Práticas Recomendadas de Segurança
+## 8. IAM Access Analyzer
 
-1. **Princípio do Menor Privilégio:** Conceda apenas as permissões necessárias para a função que o usuário precisa desempenhar.
-2. **Habilite MFA** para a conta raiz e usuários privilegiados, garantindo uma camada extra de segurança.
-3. **Audite permissões** regularmente usando ferramentas como o **Access Advisor** ou IAM Access Analyzer para remover acessos não utilizados.
-4. **Use Funções Temporárias** em vez de credenciais de longa duração, minimizando riscos de vazamento.
-5. **Aplique Políticas de Senha Rígidas:** Defina complexidade e rotação de senhas para usuários que precisam de login no Console.
-6. **Monitore as Atividades** de IAM usando logs do AWS CloudTrail, que registra chamadas de API e eventos relacionados à segurança.
+O **IAM Access Analyzer** verifica suas políticas e identifica se algum recurso da AWS está exposto publicamente ou a entidades externas.  
+- Detecção de buckets S3 públicos.
+- Análise de permissões em contas cruzadas.
 
 ---
 
-### Logs e Monitoramento com CloudTrail
+## 9. Práticas Recomendadas de Segurança
 
-O **AWS CloudTrail** registra chamadas de API e eventos relacionados à segurança. É fundamental para:
-- **Rastreamento de Alterações:** Identifique quem alterou políticas ou realizou ações críticas como a exclusão de instâncias ou buckets.
-- **Auditoria:** Auxilia na conformidade com normas como ISO 27001 e PCI-DSS.
-- **Alerta Proativo:** Integração com serviços de monitoramento como o Amazon CloudWatch para disparar alertas em caso de atividades suspeitas.
-
----
-
-### Integração com Serviços de Diretório
-
-O IAM pode se integrar ao **AWS Directory Service** ou **AWS Single Sign-On (SSO)** para autenticação centralizada e gerenciamento de identidades:
-- **Active Directory (AD):** Permite sincronizar usuários e grupos do AD com o IAM.
-- **AWS Single Sign-On:** Garante uma experiência simplificada de login para várias contas AWS e aplicativos de terceiros.
+1. **Princípio do Menor Privilégio**: conceda apenas as permissões necessárias.  
+2. **Habilite o MFA**: especialmente para a conta raiz e usuários críticos.  
+3. **Audite permissões**: use ferramentas como **Access Advisor** para remover acessos não utilizados.  
+4. **Use Funções Temporárias**: em vez de credenciais de longa duração.  
+5. **Políticas de Senha Rígidas**: defina complexidade, rotação e histórico.  
+6. **Monitore as Atividades**: integre o IAM ao AWS CloudTrail para rastrear ações críticas.
 
 ---
 
-### Senhas e Políticas de Acesso
+## 10. Logs e Monitoramento com CloudTrail
 
-Além de políticas baseadas em JSON, o IAM permite que você **configure políticas de senha** com requisitos de:
-- Complexidade (uso de maiúsculas, caracteres especiais).
-- Tamanho mínimo da senha.
-- Rotação periódica (alteração obrigatória após X dias).
-- Histórico de senhas (impede o reuso de senhas recentes).
-
----
-
-### AWS Security Token Service (STS)
-
-O **AWS STS** permite criar credenciais de segurança temporárias para usuários ou aplicações. Geralmente, é integrado com funções IAM, permitindo que usuários assumam papéis em **outras contas** ou em **serviços** sem expor credenciais de longo prazo.
+O **AWS CloudTrail** registra chamadas de API e eventos, permitindo:  
+- **Rastreamento de Alterações**: descubra quem alterou políticas ou removeu recursos.  
+- **Auditoria**: atenda a requisitos de conformidade como ISO 27001 e PCI-DSS.  
+- **Alertas**: integre com CloudWatch para disparar notificações diante de atividades suspeitas.
 
 ---
 
-### Service Control Policies (SCP) com AWS Organizations
+## 11. Integração com Serviços de Diretório
 
-Quando se gerenciam **múltiplas contas** em uma organização, as **Service Control Policies (SCPs)** podem impor restrições de segurança em **todas** as contas-membro. Por exemplo, é possível impedir a criação de recursos em determinadas regiões ou restringir o uso de serviços não aprovados. Isso funciona de forma complementar às políticas do IAM em cada conta.
-
----
-
-### Curiosidades
-
-- **IAM Multi-Conta:** Trabalha com **AWS Organizations** para gerenciar permissões centralmente em várias contas.
-- **História do IAM:** Lançado em **2010**, é um dos serviços mais utilizados da AWS, com suporte para **centenas de ações** controladas por políticas.
-- **Segurança em Números:** É essencial para atender a requisitos de conformidade (GDPR, HIPAA, ISO 27001, PCI-DSS).
+Use o **AWS Directory Service** ou **AWS Single Sign-On (SSO)** para autenticação centralizada:  
+- **AD Connector**: sincronize usuários e grupos do Active Directory (AD) com o IAM.  
+- **AWS SSO**: gerencie acesso a múltiplas contas AWS e aplicativos de terceiros em um só lugar.
 
 ---
 
-## Conclusão
+## 12. Senhas e Políticas de Acesso
 
-O IAM é o **pilar central** da segurança na AWS, permitindo **gestão granular** e escalável de permissões. Dominar seus recursos é fundamental para **proteger aplicações**, **atender a requisitos de conformidade** e **evitar acesso indevido** aos seus recursos na nuvem. Uma boa compreensão de **usuários**, **grupos**, **funções**, **políticas** e **ferramentas de auditoria** forma a base para qualquer ambiente seguro na AWS.
+O IAM permite configurar **políticas de senha** com requisitos como:  
+- Complexidade (letras maiúsculas, minúsculas, números, símbolos).  
+- Tamanho mínimo.  
+- Rotação obrigatória após X dias.  
+- Bloqueio de reuso de senhas recentes.
+
+---
+
+## 13. AWS Security Token Service (STS)
+
+O **STS** gera credenciais temporárias para acesso a recursos:
+- Substitui o uso de chaves de longo prazo.
+- Frequente em cenários de **AssumeRole** para contas cruzadas ou sistemas externos.
+
+---
+
+## 14. Service Control Policies (SCP) com AWS Organizations
+
+As **SCPs** impõem restrições de segurança a **todas** as contas de uma organização:
+- Restringir criação de recursos em certas regiões.
+- Bloquear uso de serviços específicos.
+- Funciona em conjunto com as políticas do IAM em cada conta.
+
+---
+
+## 15. Curiosidades
+
+- **Multi-Conta**: o IAM se integra com o **AWS Organizations** para gerenciamento centralizado.  
+- **Data de Lançamento**: IAM foi introduzido em **2010**, sendo um dos pilares da segurança na AWS.  
+- **Escopo de Ações**: são **centenas** de ações documentadas que você pode controlar em políticas JSON.  
+- **Conformidade**: essencial para cumprir GDPR, HIPAA, ISO 27001, PCI-DSS, entre outros.
+
+---
+
+## 16. Conclusão
+
+O IAM é o **pilar da segurança** na AWS, fornecendo gerenciamento granular e escalável de permissões. Dominar seu uso é fundamental para **proteger aplicações**, **cumprir requisitos de conformidade** e **evitar acessos indevidos**. Compreender **usuários**, **grupos**, **funções**, **políticas** e as ferramentas de auditoria é a base para qualquer ambiente seguro na nuvem AWS.
+
+---
+
+## 17. Links e Referências
+
+Para aprofundar seu conhecimento sobre o **AWS IAM**, consulte os seguintes recursos oficiais e complementares:
+
+- [**Documentação Oficial do AWS IAM**](https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/introduction.html)  
+- [**Boas Práticas de Segurança com IAM**](https://docs.aws.amazon.com/pt_br/IAM/latest/UserGuide/best-practices.html)  
+- [**Guia de Início Rápido do AWS IAM**](https://aws.amazon.com/pt/iam/getting-started/)  
+- [**AWS IAM Blog**](https://aws.amazon.com/blogs/security/category/security/identity-and-access-management/)  
+- [**Tutoriais e Workshops do AWS IAM**](https://aws.amazon.com/training/paths-security/)  
+- [**Whitepapers de Segurança da AWS**](https://aws.amazon.com/whitepapers/?awsf.filter-content-type=*all&awsf.filter-security=*all)  
+  - [**AWS Security Best Practices**](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)  
+- [**AWS re:Invent Sessions sobre IAM**](https://reinvent.awsevents.com/sessions/)  
+- [**Vídeos Educacionais da AWS sobre IAM**](https://www.youtube.com/results?search_query=aws+iam)  
+- [**AWS Well-Architected Framework - Segurança**](https://docs.aws.amazon.com/pt_br/wellarchitected/latest/security-pillar/welcome.html)  
+- [**AWS IAM FAQs**](https://aws.amazon.com/pt/iam/faqs/)  
+- [**Cursos Online sobre AWS IAM**](https://www.aws.training/Details/Curriculum?id=20685)
