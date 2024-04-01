@@ -8,7 +8,9 @@
 
 ## 1. Introdução
 
-O **Amazon Elastic Block Store (Amazon EBS)** é um serviço de **armazenamento em blocos** altamente escalável e de **alta performance**, projetado para ser usado com o **Amazon Elastic Compute Cloud (Amazon EC2)**. O EBS fornece volumes persistentes que podem ser anexados a instâncias EC2, atuando como discos rígidos virtuais que oferecem armazenamento confiável e de baixo atraso para aplicações que requerem acesso consistente e durável aos dados.
+O **Amazon Elastic Block Store (Amazon EBS)** é um serviço de **armazenamento em blocos** altamente escalável e de **alta performance**, projetado para ser usado com o **Amazon Elastic Compute Cloud (Amazon EC2)**. 
+
+O EBS fornece volumes persistentes que podem ser anexados a instâncias EC2, atuando como discos rígidos virtuais que oferecem armazenamento confiável e de baixo atraso para aplicações que requerem acesso consistente e durável aos dados.
 
 ---
 
