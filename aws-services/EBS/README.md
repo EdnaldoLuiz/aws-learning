@@ -216,14 +216,6 @@ Para aprofundar seu conhecimento sobre o **Amazon EBS**, consulte os seguintes r
 - [**Documentação Oficial do Amazon EBS**](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/AmazonEBS.html)
 - [**Guia de Início Rápido do Amazon EBS**](https://aws.amazon.com/pt/ebs/getting-started/)
 - [**Boas Práticas de EBS**](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/EBSBestPractices.html)
-- [**AWS EBS Blog**](https://aws.amazon.com/blogs/storage/category/storage/amazon-elastic-block-store/)
-- [**Tutoriais e Workshops do Amazon EBS**](https://aws.amazon.com/training/paths-storage/)
-- [**Whitepapers de Segurança da AWS**](https://aws.amazon.com/whitepapers/?awsf.filter-content-type=*all&awsf.filter-security=*all)
-  - [**AWS Security Best Practices**](https://d1.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)
-- [**AWS re:Invent Sessions sobre EBS**](https://reinvent.awsevents.com/sessions/)
-- [**Vídeos Educacionais da AWS sobre EBS**](https://www.youtube.com/results?search_query=amazon+ebs)
-- [**AWS Well-Architected Framework - Segurança**](https://docs.aws.amazon.com/pt_br/wellarchitected/latest/security-pillar/welcome.html)
 - [**AWS EBS FAQs**](https://aws.amazon.com/pt/ebs/faqs/)
-- [**Cursos Online sobre Amazon EBS**](https://www.aws.training/Details/Curriculum?id=20685)
 
 ---
