@@ -1,7 +1,7 @@
 <h1 align="center">Cloud Practitioner (CLF-C02)</h1>
 
 <div align="center">
-    <img width="250px" src="https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Cloud-Practitioner_badge.634f8a21af2e0e956ed8905a72366146ba22b74c.png" alt="AWS Certified Cloud Practitioner Badge">
+    <img width="250px" src="./../../assets/aws-exam/clf.png" alt="AWS Certified Cloud Practitioner Badge">
 </div>
 
 ---
