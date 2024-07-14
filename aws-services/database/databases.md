@@ -86,7 +86,7 @@
         </tr>
         <tr align="center">
             <td>
-                <img width="150px" src="./../../assets/aws-services/database/keyspaces-db.jpg" alt="Amazon Keyspaces">
+                <img width="150px" src="./../../assets/aws-services/database/keyspaces-db.png" alt="Amazon Keyspaces">
             </td>
             <td>
                 <a href="#keyspaces">Amazon Keyspaces</a>
@@ -97,7 +97,7 @@
         </tr>
         <tr align="center">
             <td>
-                <img width="150px" src="./../../assets/aws-services/database/rds-db.jpg" alt="Amazon RDS">
+                <img width="150px" src="./../../assets/aws-services/database/rds-db.png" alt="Amazon RDS">
             </td>
             <td>
                 <a href="#rds">Amazon RDS</a>
