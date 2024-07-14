@@ -9,7 +9,7 @@
     <tbody>
         <tr align="center">
             <td>
-                <img width="150px" src="./assets/aws-services/database/timestream-db.jpg" alt="">
+                <img width="150px" src="./../../assets/aws-services/database/timestream-db.jpg" alt="">
             </td>
             <td>
                 <a href="#cloud-101">Amazon Timestream</a>
