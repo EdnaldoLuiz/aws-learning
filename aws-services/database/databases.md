@@ -2,21 +2,13 @@
     <thead>
         <tr>
             <th>Serviço</th>
-            <th width=200px>Nome</th>
+            <th width="200px">Nome</th>
             <th>Descrição</th>
         </tr>
     </thead>
     <tbody>
         <tr align="center">
-            <td>
-                <img width="150px" src="./../../assets/aws-services/database/timestream-db.jpg" alt="Amazon Timestream DB">
-            </td>
-            <td>
-                <a href="#timestream">Amazon Timestream</a>
-            </td>
-            <td>
-                <p>Amazon Timestream é um banco de dados de séries temporais totalmente gerenciado, otimizado para armazenar e processar dados ao longo do tempo, facilitando a análise de tendências e padrões.</p>
-            </td>
+            <td colspan="3"><strong>Bancos de Dados SQL</strong></td>
         </tr>
         <tr align="center">
             <td>
@@ -31,6 +23,20 @@
         </tr>
         <tr align="center">
             <td>
+                <img width="150px" src="./../../assets/aws-services/database/rds-db.png" alt="Amazon RDS">
+            </td>
+            <td>
+                <a href="#rds">Amazon RDS</a>
+            </td>
+            <td>
+                <p>Amazon RDS (Relational Database Service) facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem, oferecendo suporte para MySQL, PostgreSQL, MariaDB, Oracle e SQL Server.</p>
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="3"><strong>Bancos de Dados NoSQL</strong></td>
+        </tr>
+        <tr align="center">
+            <td>
                 <img width="150px" src="./../../assets/aws-services/database/dynamodb-db.jpg" alt="Amazon DynamoDB">
             </td>
             <td>
@@ -38,28 +44,6 @@
             </td>
             <td>
                 <p>Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado, que oferece desempenho em escala, com suporte a modelos de dados de chave-valor e documentos.</p>
-            </td>
-        </tr>
-        <tr align="center">
-            <td>
-                <img width="150px" src="./../../assets/aws-services/database/redshift-db.jpg" alt="Amazon Redshift DB">
-            </td>
-            <td>
-                <a href="#redshift">Amazon Redshift</a>
-            </td>
-            <td>
-                <p>Amazon Redshift é um serviço de armazenamento de dados em nuvem, otimizado para análise de grandes volumes de dados, utilizando a tecnologia de colunas para melhorar a performance de consultas.</p>
-            </td>
-        </tr>
-        <tr align="center">
-            <td>
-                <img width="150px" src="./../../assets/aws-services/database/qldb-db.jpg" alt="Amazon QLDB">
-            </td>
-            <td>
-                <a href="#qldb">Amazon QLDB</a>
-            </td>
-            <td>
-                <p>Amazon QLDB (Quantum Ledger Database) é um banco de dados de livro-razão totalmente gerenciado, que fornece um registro de transações transparente, imutável e verificável, ideal para rastrear aplicações de auditoria e histórico de dados.</p>
             </td>
         </tr>
         <tr align="center">
@@ -96,15 +80,7 @@
             </td>
         </tr>
         <tr align="center">
-            <td>
-                <img width="150px" src="./../../assets/aws-services/database/rds-db.png" alt="Amazon RDS">
-            </td>
-            <td>
-                <a href="#rds">Amazon RDS</a>
-            </td>
-            <td>
-                <p>Amazon RDS (Relational Database Service) facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem, oferecendo suporte para MySQL, PostgreSQL, MariaDB, Oracle e SQL Server.</p>
-            </td>
+            <td colspan="3"><strong>Bancos de Dados em Memória</strong></td>
         </tr>
         <tr align="center">
             <td>
