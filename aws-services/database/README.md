@@ -37,7 +37,7 @@
         </tr>
         <tr align="center">
             <td>
-                <img width="150px" src="./../../assets/aws-services/database/dynamodb-db.jpg" alt="Amazon DynamoDB">
+                <img width="150px" src="./../../assets/aws-services/database/dynamodb-db.png" alt="Amazon DynamoDB">
             </td>
             <td>
                 <a href="#dynamodb">Amazon DynamoDB</a>
@@ -102,6 +102,20 @@
             </td>
             <td>
                 <p>Amazon MemoryDB é um banco de dados de memória compatível com Redis, totalmente gerenciado, que oferece persistência e alta disponibilidade para cargas de trabalho de baixa latência.</p>
+            </td>
+        </tr>
+        <tr align="center">
+            <td colspan="3"><strong>Outros</strong></td>
+        </tr>
+        <tr align="center">
+            <td>
+                <img width="150px" src="./../../assets/aws-services/database/dms-db.png" alt="Amazon DMS">
+            </td>
+            <td>
+                <a href="#dms">Amazon DMS</a>
+            </td>
+            <td>
+                <p>O AWS Database Migration Service é um serviço de migração de banco de dados relacionais e não relacionais para a AWS de modo rápido e seguro.</p>
             </td>
         </tr>
     </tbody>
