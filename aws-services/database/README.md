@@ -23,10 +23,12 @@
         </tr>
         <tr align="center">
             <td>
-                <img width="150px" src="./../../assets/aws-services/database/rds-db.png" alt="Amazon RDS">
+                <a href="https://github.com/EdnaldoLuiz/aws-learning/blob/main/aws-services/database/sql/RDS.md">
+                    <img width="150px" src="./../../assets/aws-services/database/rds-db.png" alt="Amazon RDS">
+                </a>
             </td>
             <td>
-                <a href="#rds">Amazon RDS</a>
+                <a href="https://github.com/EdnaldoLuiz/aws-learning/blob/main/aws-services/database/sql/RDS.md">Amazon RDS</a>
             </td>
             <td>
                 <p>Amazon RDS (Relational Database Service) facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem, oferecendo suporte para MySQL, PostgreSQL, MariaDB, Oracle e SQL Server.</p>
