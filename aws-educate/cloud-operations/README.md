@@ -133,7 +133,9 @@ A AWS oferece uma variedade de modelos de pagamento flexíveis que permitem às 
 
 No modelo "Pague pelo Uso", você paga apenas pelos recursos que realmente utiliza, sem compromissos de longo prazo ou custos iniciais. Este modelo é ideal para cargas de trabalho variáveis ou imprevisíveis, permitindo que você ajuste a capacidade conforme a demanda e pague apenas pelo consumo efetivo.
 
-**Exemplo:** Uma startup que desenvolve um aplicativo móvel pode usar o modelo "Pague pelo Uso" para escalar automaticamente sua infraestrutura na AWS conforme o número de usuários do aplicativo cresce, pagando apenas pelo tempo e pelos recursos que são efetivamente utilizados.
+- **Exemplos :**
+    - Uma startup que desenvolve um aplicativo móvel pode usar o modelo "Pague pelo Uso" para escalar automaticamente sua infraestrutura na AWS conforme o número de usuários do aplicativo cresce pagando apenas pelo tempo e pelos recursos que são efetivamente utilizados.
+    - Uma agência de marketing digital pode utilizar o modelo para lidar com campanhas sazonais durante os picos de campanha, a infraestrutura é escalada automaticamente, pagando apenas pelo uso adicional.
 
 ### Economize ao Se Comprometer (Save When You Commit)
 
@@ -145,9 +147,13 @@ No modelo "Pague pelo Uso", você paga apenas pelos recursos que realmente utili
 
 O modelo "Economize ao Se Comprometer" permite obter descontos significativos ao reservar recursos por um período de um ou três anos. Este modelo é ideal para cargas de trabalho estáveis e previsíveis, onde você pode planejar a capacidade antecipadamente e obter economia em troca do compromisso de uso contínuo.
 
-**Exemplo:** Uma empresa de análise de dados que precisa de uma capacidade de computação constante para processar grandes volumes de dados pode optar por Instâncias Reservadas na AWS, comprometendo-se a usar um determinado tipo de instância por um ano, em troca de um desconto significativo em comparação ao modelo de pagamento por uso.
+- **Exemplos :**
+    - Uma empresa de análise de dados que precisa de uma capacidade de computação constante para processar grandes volumes de dados pode optar por Instâncias Reservadas na AWS, comprometendo-se a usar um determinado tipo de instância por um ano, em troca de um desconto significativo em comparação ao modelo de pagamento por uso.
+    - Um portal de e-commerce que espera tráfego consistente ao longo do ano pode reservar instâncias para reduzir custos operacionais, as reservas garantem um preço mais baixo para a capacidade constante que será utilizada.
 
-### Pague Menos ao Usar Mais (Pay Less When You Use More)
+### Pague Menos ao Usar Mais (Pay Less When You
+
+ Use More)
 
 <div align=center>
     <img width=800px src="./../../assets/aws-educate/cloud-operations/pay-3.png" alt="Pay Less When You Use More image">
@@ -157,7 +163,9 @@ O modelo "Economize ao Se Comprometer" permite obter descontos significativos ao
 
 O modelo "Pague Menos ao Usar Mais" oferece preços escalonados que diminuem à medida que o consumo de recursos aumenta. Este modelo incentiva a economia de custos para cargas de trabalho de grande escala, onde os descontos são aplicados automaticamente com base no volume de uso.
 
-**Exemplo:** Uma empresa de streaming de vídeo que armazena grandes quantidades de conteúdo em Amazon S3 pode se beneficiar do modelo "Pague Menos ao Usar Mais". À medida que o volume de armazenamento cresce, o custo por gigabyte diminui, resultando em economias significativas nos custos de armazenamento à medida que mais dados são adicionados.
+- **Exemplos :**
+    - Uma empresa de streaming de vídeo que armazena grandes quantidades de conteúdo em Amazon S3 pode se beneficiar do modelo "Pague Menos ao Usar Mais". À medida que o volume de armazenamento cresce, o custo por gigabyte diminui, resultando em economias significativas nos custos de armazenamento à medida que mais dados são adicionados.
+    - Uma organização de pesquisa científica que processa grandes volumes de dados pode economizar em custos de computação, quanto mais recursos forem utilizados, menores serão as tarifas unitárias aplicadas.
 
 ---
 
@@ -173,23 +181,17 @@ O AWS Free Tier oferece aos novos clientes a oportunidade de explorar e experime
 
 Essas ofertas estão disponíveis para todos os clientes da AWS e não expiram. Elas incluem serviços como o AWS Lambda, com um milhão de solicitações gratuitas por mês, e o Amazon DynamoDB, com 25 GB de armazenamento gratuito.
 
-**Exemplo:** Um desenvolvedor pode usar o AWS Lambda para criar e testar funções de back-end sem se preocupar com custos, desde que suas solicitações não excedam um milhão por mês.
-
 ### Nível de 12 Meses (12 Months Free)
 
 Essas ofertas são válidas por 12 meses a partir da data de registro na AWS. Incluem serviços como o Amazon EC2, com 750 horas de uso gratuito por mês de instâncias t2.micro, e o Amazon S3, com 5 GB de armazenamento gratuito.
-
-**Exemplo:** Uma pequena empresa pode hospedar seu site em uma instância Amazon EC2 t2.micro gratuitamente durante o primeiro ano, economizando custos iniciais de hospedagem.
 
 ### Ofertas de Teste (Trials)
 
 Essas ofertas permitem que os clientes experimentem novos serviços por um curto período, geralmente de 30 a 60 dias. Um exemplo é o Amazon Redshift, que oferece 750 horas de uso gratuito de nós DC2.Large por 2 meses.
 
-**Exemplo:** Uma equipe de análise de dados pode usar o Amazon Redshift gratuitamente durante 2 meses para testar e avaliar o serviço antes de decidir sobre a assinatura paga.
-
 ---
 
-## Ferramentas para melhorar a redução de custos
+## Ferramentas para Melhorar a Redução de Custos
 
 ### AWS Pricing Calculator
 
@@ -201,7 +203,29 @@ Essas ofertas permitem que os clientes experimentem novos serviços por um curto
 
 O AWS Pricing Calculator é uma ferramenta que permite estimar os custos dos serviços AWS com base em suas necessidades específicas. Você pode configurar e comparar diferentes cenários de uso, ajustando parâmetros como capacidade de computação, armazenamento e transferência de dados para obter uma estimativa detalhada dos custos.
 
-**Exemplo:** Um arquiteto de soluções pode usar o AWS Pricing Calculator para prever os custos mensais de um novo projeto de migração para a nuvem, garantindo que o orçamento esteja alinhado com as expectativas da empresa.
+- **Exemplos :**
+    - Um arquiteto de soluções pode usar o AWS Pricing Calculator para prever os custos mensais de um novo projeto de migração para a nuvem, garantindo que o orçamento esteja alinhado com as expectativas da empresa.
+    - Uma empresa pode comparar diferentes configurações de instâncias EC2 para encontrar a opção mais econômica ajustando recursos como CPU, memória e armazenamento para otimizar custos.
+
+### AWS Budgets
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-budgets.png" alt="AWS Budgets image">
+</div>
+
+<br>
+
+O AWS Budgets é uma ferramenta poderosa que permite definir orçamentos personalizados para monitorar os custos e o uso dos serviços AWS. Com o AWS Budgets, você pode criar alertas para ser notificado quando seus custos ou uso estiverem se aproximando dos limites definidos, garantindo que você mantenha o controle sobre seus gastos na nuvem.
+
+- **Funcionalidades**
+    - **Definição de Orçamentos:** Crie orçamentos detalhados para serviços específicos, grupos de recursos, ou para toda a sua conta AWS.
+    - **Alertas Personalizados:** Configure alertas via e-mail ou SMS para ser notificado quando seus custos ou uso estiverem prestes a exceder os limites definidos.
+    - **Monitoramento de Uso e Custos:** Acompanhe em tempo real o uso e os custos dos serviços AWS, com visualizações gráficas e relatórios detalhados.
+    - **Integração com AWS Cost Explorer:** Utilize o AWS Cost Explorer para visualizar e analisar os dados de custos e uso associados aos seus orçamentos.
+
+- **Exemplos :**
+    - Uma startup pode usar o AWS Budgets para definir um orçamento mensal para os serviços de computação e armazenamento, com alertas configurados, a equipe financeira será notificada se os custos se aproximarem do limite estabelecido.
+    - Uma grande corporação pode monitorar os custos de vários projetos simultaneamente, garantindo que cada projeto mantenha-se dentro do orçamento alocado.
 
 ### AWS Cost Explorer
 
@@ -213,7 +237,9 @@ O AWS Pricing Calculator é uma ferramenta que permite estimar os custos dos ser
 
 O AWS Cost Explorer é uma ferramenta que permite visualizar, entender e gerenciar seus custos e uso da AWS ao longo do tempo. Ele fornece gráficos interativos e relatórios detalhados que ajudam a identificar padrões de gasto, otimizar custos e planejar futuros investimentos.
 
-**Exemplo:** Um gerente financeiro pode usar o AWS Cost Explorer para analisar os gastos mensais da empresa com serviços AWS, identificar áreas de otimização e tomar decisões informadas sobre a alocação de recursos.
+- **Exemplos :**
+    - Um gerente financeiro pode usar o AWS Cost Explorer para analisar os gastos mensais da empresa com serviços AWS, identificando áreas de otimização e tomando decisões informadas sobre a alocação de recursos.
+    - Uma equipe de DevOps pode utilizar a ferramenta para monitorar os custos de ambientes de desenvolvimento e produção, comparando e ajustando conforme necessário para manter os custos sob controle.
 
 ### AWS Migration Evaluator
 
@@ -225,4 +251,8 @@ O AWS Cost Explorer é uma ferramenta que permite visualizar, entender e gerenci
 
 O AWS Migration Evaluator (anteriormente TSO Logic) é uma ferramenta que ajuda as organizações a avaliar os custos e os benefícios da migração para a AWS. Ele analisa os dados do ambiente atual e fornece um relatório detalhado com recomendações de migração, ajudando a tomar decisões informadas sobre a transição para a nuvem.
 
-**Exemplo:** Uma empresa pode usar o AWS Migration Evaluator para entender os custos envolvidos na migração de sua infraestrutura on-premises para a AWS e desenvolver um plano de migração que maximize a eficiência e a economia de custos.
+- **Exemplos :**
+    - Uma empresa pode usar o AWS Migration Evaluator para entender os custos envolvidos na migração de sua infraestrutura on-premises para a AWS desenvolvendo um plano de migração que maximize a eficiência e a economia de custos.
+    - Uma organização sem fins lucrativos pode avaliar os benefícios de migrar suas operações para a AWS identificando oportunidades para reduzir custos operacionais e melhorar a eficiência.
+
+---
