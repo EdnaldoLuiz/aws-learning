@@ -7,7 +7,7 @@
 ## Introdução ao Well-Architected Framework
 
 <div align=center>
-    <img width=300px src="./../../assets/aws-educate/cloud-operations/cloud-operations-1.png" alt="AWS Educate introdução, foto com os 4 beneficios">
+    <img width=1000px src="./../../assets/aws-educate/cloud-operations/cloud-operations-1.png" alt="AWS Educate introdução, foto com os 4 beneficios">
 </div>
 
 ### Benefícios
@@ -21,16 +21,41 @@ A adoção do Cloud Operations na AWS traz uma série de benefícios estratégic
 
 ### Inovação
 
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/Captura de tela 2024-07-27 111623.png" alt="AWS Educate introdução, foto com os 4 beneficios">
+</div>
+<br>
 A AWS oferece uma vasta gama de serviços que permitem às empresas inovar rapidamente. Com acesso a tecnologias avançadas como inteligência artificial, machine learning e analytics, as organizações podem experimentar novas ideias e desenvolver soluções de ponta sem a necessidade de investimentos pesados em infraestrutura. O ambiente flexível e ágil da AWS acelera o ciclo de inovação, permitindo que as empresas se mantenham à frente no mercado.
+
+---
 
 ### Simplicidade
 
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/Captura de tela 2024-07-27 111731.png" alt="AWS Educate introdução, foto com os 4 beneficios">
+</div>
+<br>
 A simplicidade operacional é um dos pilares da AWS. A plataforma fornece ferramentas e serviços que automatizam tarefas complexas de gerenciamento de infraestrutura, como monitoramento, segurança e backups. Isso reduz significativamente a carga administrativa sobre as equipes de TI, permitindo que se concentrem em iniciativas estratégicas. A interface intuitiva e a extensa documentação também facilitam a implementação e a gestão de recursos na nuvem.
+
+---
 
 ### Escalabilidade
 
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/Captura de tela 2024-07-27 111703.png" alt="AWS Educate introdução, foto com os 4 beneficios">
+</div>
+<br>
 A AWS permite que as empresas escalem seus recursos de forma rápida e eficiente, de acordo com a demanda. Com a escalabilidade automática, as organizações podem ajustar sua capacidade de computação, armazenamento e rede quase em tempo real, garantindo desempenho ideal em todos os momentos. Essa flexibilidade é crucial para lidar com picos de demanda e crescimento rápido, sem comprometer a qualidade do serviço ou a experiência do usuário.
+
+---
 
 ### Redução de Custos
 
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/Captura de tela 2024-07-27 111819.png" alt="AWS Educate introdução, foto com os 4 beneficios">
+</div>
+<br>
+
 Um dos benefícios mais atraentes do Cloud Operations na AWS é a redução de custos. A AWS opera em um modelo de pagamento conforme o uso, eliminando a necessidade de investimentos iniciais em hardware e infraestrutura. As empresas pagam apenas pelos recursos que utilizam, o que reduz o desperdício e melhora a eficiência do orçamento. Além disso, a AWS oferece diversas opções de preços e instâncias reservadas, permitindo otimizar ainda mais os custos operacionais.
+
+---
