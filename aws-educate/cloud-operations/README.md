@@ -4,7 +4,7 @@
     <img width=300px src="https://images.credly.com/images/01c3b0d4-a225-483b-a762-460473658c1a/image.png" alt="cloud 101 badge">
 </div>
 
-## Introdução ao Well-Architected Framework
+## Introdução ao Well-Architected Framework - Seção 1
 
 <div align=center>
     <img width=1000px src="./../../assets/aws-educate/cloud-operations/cloud-operations-1.png" alt="AWS Educate introdução, foto com os 4 beneficios">
@@ -14,7 +14,7 @@
 
 O AWS Well-Architected Framework é um conjunto de boas práticas e princípios de arquitetura que ajudam as organizações a projetar, construir e operar aplicações na nuvem de maneira segura, eficiente e resiliente. Ele fornece orientações sobre como otimizar cargas de trabalho em cinco áreas principais, conhecidas como pilares: Excelência Operacional, Segurança, Confiabilidade, Eficiência de Performance e Otimização de Custos. Esses pilares ajudam as empresas a alcançar seus objetivos de negócios ao mesmo tempo em que se beneficiam das vantagens da nuvem.
 
-### Benefícios
+## Benefícios
 
 A adoção do Cloud Operations na AWS traz uma série de benefícios estratégicos que impulsionam a eficiência e a competitividade das organizações. Aonde seus 4 principais benefícios são:
 
@@ -113,7 +113,7 @@ A governança envolve a implementação de controles e processos para assegurar 
 
 ---
 
-## Introdução ao Gerenciamento de Custos
+## Introdução ao Gerenciamento de Custos - Seção 2
 
 <div align=center>
     <img width=1000px src="./../../assets/aws-educate/cloud-operations/aws-costs.png" alt="7 pilares do aws well architected framework">
@@ -256,3 +256,212 @@ O AWS Migration Evaluator (anteriormente TSO Logic) é uma ferramenta que ajuda 
     - Uma organização sem fins lucrativos pode avaliar os benefícios de migrar suas operações para a AWS identificando oportunidades para reduzir custos operacionais e melhorar a eficiência.
 
 ---
+
+## Gerenciando sua Conta na AWS - Seção 3
+
+### AWS Support Plans
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-support.png" alt="AWS Support plans types">
+</div>
+
+<br>
+
+A AWS oferece quatro tipos de planos de suporte que permitem que você escolha o nível de suporte mais adequado às necessidades do seu negócio:
+
+### Basic Support
+
+Inclui acesso 24x7 ao atendimento ao cliente para questões de faturamento e acesso à documentação e fóruns da AWS.
+
+- **Exemplos:**
+    - Uma pequena startup pode usar o Basic Support para obter ajuda com questões de faturamento e orientações iniciais sobre o uso dos serviços AWS.
+    - Um desenvolvedor individual pode usar o Basic Support para acessar tutoriais e documentações técnicas.
+
+### Developer Support
+
+Fornece suporte técnico durante o horário comercial com tempos de resposta garantidos e acesso a especialistas em arquitetura para orientação.
+
+- **Exemplos:**
+    - Uma equipe de desenvolvimento pode usar o Developer Support para obter assistência técnica em horário comercial durante a construção de um novo aplicativo.
+    - Uma empresa de software pode usar o Developer Support para resolver problemas técnicos que surgem durante a fase de desenvolvimento.
+
+### Business Support
+
+Oferece suporte 24x7 com tempos de resposta mais rápidos, acesso a arquitetos de soluções e uma análise de uso mensal.
+
+- **Exemplos:**
+    - Uma empresa de comércio eletrônico pode usar o Business Support para garantir suporte contínuo e respostas rápidas a problemas críticos que afetam suas operações.
+    - Uma empresa de mídia pode usar o Business Support para obter análises mensais detalhadas do uso e otimização de seus recursos na AWS.
+
+### Enterprise Support
+
+Inclui todos os benefícios do Business Support, além de um gerente técnico de conta designado, suporte proativo e treinamento exclusivo.
+
+- **Exemplos:** 
+    - Uma grande corporação pode usar o Enterprise Support para receber suporte personalizado e proativo, garantindo que suas operações críticas na AWS sejam otimizadas e protegidas.
+    - Uma organização global pode usar o Enterprise Support para ter um gerente técnico de conta dedicado, ajudando a planejar e implementar estratégias de nuvem complexas.
+
+---
+
+### AWS Tags
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-tags.png" alt="AWS Tags image">
+</div>
+
+<br>
+
+As tags na AWS são rótulos que você pode atribuir aos seus recursos da AWS para organizar e gerenciar melhor esses recursos.
+
+- **Benefícios**
+    - **Organização de Recursos:** As tags permitem agrupar recursos por projeto, ambiente ou proprietário, facilitando a organização e a navegação.
+    - **Alocação de Custos:** As tags ajudam a rastrear e atribuir custos aos centros de custo apropriados, melhorando a visibilidade financeira.
+    - **Automação:** As tags podem ser usadas para automatizar processos, como o desligamento de instâncias não utilizadas fora do horário comercial.
+    - **Controle de Acesso:** As tags permitem aplicar políticas de segurança baseadas em rótulos, garantindo que apenas usuários autorizados possam acessar determinados recursos.
+
+### AWS Trusted Advisor
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-trusted-advisor.png" alt="AWS Trusted Advisor image">
+</div>
+
+<br>
+
+O AWS Trusted Advisor é uma ferramenta que oferece recomendações em tempo real para ajudar a otimizar sua infraestrutura AWS em cinco áreas principais: Custos, Desempenho, Segurança, Tolerância a Falhas e Limites de Serviço. O Trusted Advisor verifica automaticamente seus recursos e fornece relatórios detalhados com sugestões de melhoria, ajudando a garantir que você esteja seguindo as melhores práticas da AWS.
+
+- **Benefícios**
+    - **Otimização de Custos:**
+    - **Performance:**
+    - **Segurança:**
+    - **Tolerança a Falhas:**
+    - **Cotas de Serviços:**
+
+## Serviços adicionais na nuvem AWS - Seção 4
+
+### AWS CloudWatch
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-cloudwatch.png" alt="AWS CloudWatch image">
+</div>
+
+<br>
+
+O AWS CloudWatch é um serviço de monitoramento e observabilidade que proporciona dados e insights acionáveis para monitorar suas aplicações, responder sistematicamente a mudanças de desempenho e otimizar a utilização de recursos. Com o CloudWatch, você pode coletar e acompanhar métricas, coletar e monitorar arquivos de log, definir alarmes e automatizar ações com base em seus dados.
+
+- **Benefícios**
+    - **Auditoria de Atividades:** Permite o rastreamento de atividades de usuários e recursos em sua infraestrutura AWS, garantindo conformidade e segurança.
+        - **Exemplos:**
+            - Monitorar o uso de recursos para garantir que todos os serviços estejam em conformidade com as políticas da empresa.
+            - Identificar padrões de acesso e uso para auditorias internas e externas.
+
+    - **Identificar falhas de Segurança:** Acompanhamento de eventos de segurança em tempo real para detectar e responder a possíveis ameaças rapidamente.
+        - **Exemplos:**
+            - Configurar alarmes para atividades suspeitas, como tentativas de login falhadas.
+            - Monitorar logs de segurança para identificar e mitigar vulnerabilidades.
+
+    - **Encontrar falhas operacionais:** Ajuda a identificar problemas de desempenho e falhas operacionais em suas aplicações e infraestrutura.
+        - **Exemplos:**
+            - Definir alarmes para métricas de desempenho, como uso de CPU ou latência de rede, para detectar problemas antes que afetem os usuários.
+            - Coletar logs de aplicação para análise de erros e falhas.
+
+---
+
+### AWS Systems Manager
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-system-manager.png" alt="AWS Systems Manager image">
+</div>
+
+<br>
+
+O AWS Systems Manager é uma ferramenta que fornece uma interface unificada para gerenciar sua infraestrutura na AWS. Ele permite automatizar tarefas administrativas, coletar dados de inventário, aplicar patches automaticamente e configurar sistemas operacionais e aplicações.
+
+- **Benefícios**
+    - **Gerenciamento Centralizado:** Proporciona um ponto centralizado para gerenciar e visualizar seus recursos AWS, simplificando a administração.
+        - **Exemplos:**
+            - Gerenciar configurações de instâncias EC2 e outros recursos a partir de um único console.
+            - Automatizar tarefas recorrentes, como atualização de pacotes e aplicação de patches.
+
+    - **Automação de Tarefas:** Permite automatizar tarefas operacionais e de manutenção, reduzindo a carga de trabalho manual.
+        - **Exemplos:**
+            - Configurar scripts para executar verificações de saúde e backups automáticos.
+            - Automatizar a aplicação de patches de segurança em sistemas operacionais.
+
+    - **Visibilidade de Inventário:** Coleta dados detalhados de inventário sobre seus recursos e software, ajudando na gestão e conformidade.
+        - **Exemplos:**
+            - Monitorar versões de software e patches aplicados em todos os servidores.
+            - Obter relatórios de inventário para auditorias de conformidade.
+
+---
+
+### AWS EventBridge
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-event-bridge.png" alt="AWS EventBridge image">
+</div>
+
+<br>
+
+O AWS EventBridge é um serviço que facilita a criação de aplicações orientadas a eventos, conectando dados de suas próprias aplicações com serviços AWS e aplicações de software como serviço (SaaS). Ele permite configurar roteamento de eventos em tempo real, simplificando a construção de aplicações reativas.
+
+- **Benefícios**
+    - **Integração Simplificada:** Conecta diferentes serviços AWS e aplicações SaaS com facilidade, permitindo a construção de fluxos de trabalho complexos.
+        - **Exemplos:**
+            - Configurar eventos que disparem funções Lambda para processar dados em tempo real.
+            - Integrar com serviços SaaS para automatizar fluxos de trabalho de negócios.
+
+    - **Roteamento de Eventos:** Permite definir regras para roteamento de eventos com base em padrões específicos, garantindo que os dados sejam direcionados para os destinos corretos.
+        - **Exemplos:**
+            - Criar regras para roteamento de eventos de mudanças de estado em aplicações.
+            - Direcionar eventos para diferentes destinos com base em padrões de conteúdo.
+
+---
+
+### AWS Config
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-config.png" alt="AWS Config image">
+</div>
+
+<br>
+
+O AWS Config é um serviço que permite avaliar, auditar e avaliar as configurações de seus recursos AWS. Ele monitora e registra continuamente as configurações de seus recursos AWS e permite automatizar a avaliação de configurações gravadas contra as configurações desejadas.
+
+- **Benefícios**
+    - **Monitoramento Contínuo:** Rastreia e registra continuamente as configurações dos recursos, garantindo que todas as mudanças sejam documentadas.
+        - **Exemplos:**
+            - Manter um histórico detalhado de todas as mudanças de configuração para fins de auditoria.
+            - Receber alertas quando as configurações dos recursos divergem das políticas definidas.
+
+    - **Conformidade Automática:** Automatiza a avaliação da conformidade de recursos com suas políticas internas, ajudando a garantir a conformidade regulatória.
+        - **Exemplos:**
+            - Implementar regras de conformidade para garantir que todos os recursos estejam configurados de acordo com as melhores práticas.
+            - Automatizar a correção de recursos não conformes com políticas de segurança.
+
+---
+
+### AWS Organizations
+
+<div align=center>
+    <img width=800px src="./../../assets/aws-educate/cloud-operations/aws-organizations.png" alt="AWS Organizations image">
+</div>
+
+<br>
+
+O AWS Organizations é um serviço que oferece uma maneira centralizada para gerenciar e consolidar várias contas AWS. Ele permite automatizar processos de criação de contas, gerenciar permissões e aplicar políticas de governança em todas as contas de sua organização.
+
+- **Benefícios**
+    - **Gerenciamento Centralizado:** Facilita o gerenciamento de várias contas AWS a partir de um único ponto, simplificando a administração e a governança.
+        - **Exemplos:**
+            - Consolidar a faturação de várias contas para simplificar o gerenciamento de custos.
+            - Aplicar políticas de segurança e conformidade de maneira centralizada em todas as contas.
+
+    - **Aplicação de Políticas:** Permite definir e aplicar políticas de controle de serviços e segurança em todas as contas, garantindo uma governança consistente.
+        - **Exemplos:**
+            - Criar políticas de serviço que restrinjam o uso de certos serviços AWS a apenas contas específicas.
+            - Implementar políticas de segurança que se apliquem automaticamente a todas as novas contas criadas.
+
+    - **Automação de Contas:** Automatiza a criação e configuração de novas contas, permitindo escalabilidade e padronização.
+        - **Exemplos:**
+            - Usar modelos para configurar automaticamente novas contas com permissões e configurações predefinidas.
+            - Automatizar a integração de novas contas com ferramentas de monitoramento e segurança.
