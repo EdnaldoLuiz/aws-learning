@@ -71,3 +71,68 @@ Esse modelo permite **flexibilidade e previsibilidade**, sem a necessidade de gr
 3. **Acesso a Tecnologias Modernas**: Sem a necessidade de atualizações caras, a empresa sempre usa os serviços mais recentes.  
 
 Adotar o modelo de **Opex** por meio da computação em nuvem é uma estratégia ideal para empresas que desejam ser mais ágeis, escaláveis e eficientes em seus gastos de TI.
+
+---
+
+## Infraestrutura Global da AWS
+
+A AWS possui uma infraestrutura global projetada para oferecer **baixa latência**, **alta disponibilidade** e **escalabilidade**. Ela é composta por diversos componentes fundamentais, como regiões, zonas de disponibilidade (AZs), zonas locais, pontos de presença, AWS Wavelength e AWS Outposts. Vamos explorar cada um desses conceitos com exemplos claros.
+
+---
+
+### **Regiões**
+As regiões são localizações físicas geográficas onde a AWS opera data centers. Cada região é composta por várias Zonas de Disponibilidade (AZs) e é projetada para funcionar de forma independente em termos de disponibilidade e segurança.
+
+- **Exemplo**: A região **"sa-east-1"** (São Paulo) serve empresas na América Latina, permitindo menor latência para os usuários brasileiros.
+
+---
+
+### **Zonas de Disponibilidade (AZs)**
+Zonas de Disponibilidade são localizações distintas e isoladas dentro de uma região, conectadas por redes de alta velocidade e baixa latência. Cada AZ possui um ou mais data centers.
+
+- **Exemplo**: Na região de São Paulo, a AWS oferece 3 AZs (sa-east-1a, sa-east-1b, sa-east-1c). Se um data center de uma AZ falhar, os recursos em outra AZ continuam funcionando.
+
+---
+
+### **Zonas Locais**
+As Zonas Locais aproximam serviços de computação, armazenamento e rede da AWS aos usuários finais, reduzindo a latência. Elas são extensões de uma região AWS.
+
+- **Exemplo**: Uma empresa de streaming em Los Angeles pode usar a **Zona Local de Los Angeles** para garantir baixa latência ao transmitir vídeos para clientes da região.
+
+---
+
+### **Pontos de Presença (Edge Locations)**
+Os Pontos de Presença são locais usados para entregar conteúdo por meio do **Amazon CloudFront** (rede de entrega de conteúdo - CDN). Isso melhora a experiência do usuário ao armazenar em cache dados frequentemente acessados.
+
+- **Exemplo**: Uma empresa global pode utilizar um ponto de presença em **Lima, Peru**, para armazenar em cache conteúdo estático, acelerando o acesso para usuários peruanos.
+
+---
+
+### **AWS Wavelength**
+O AWS Wavelength integra serviços da AWS diretamente em redes 5G de provedores de telecomunicações para entregar latência ultrabaixa a dispositivos móveis.
+
+- **Exemplo**: Um desenvolvedor de jogos em tempo real pode usar o AWS Wavelength na rede 5G da **Verizon nos EUA** para fornecer experiências rápidas e responsivas para jogadores.
+
+---
+
+### **AWS Outposts**
+O AWS Outposts permite que os serviços da AWS sejam executados no local do cliente (on-premises), oferecendo a mesma infraestrutura, APIs e ferramentas da nuvem AWS.
+
+- **Exemplo**: Um hospital que precisa manter dados sensíveis localmente, mas deseja usar os serviços da AWS, pode instalar um **AWS Outpost** em seu data center para processar dados localmente enquanto os integra à nuvem.
+
+---
+
+### **Data Centers**
+Os data centers são as unidades físicas que hospedam os servidores da AWS. Eles são projetados para oferecer alta redundância e segurança, suportando os serviços das regiões e AZs.
+
+- **Exemplo**: Os data centers em **Dublin (Irlanda)** suportam a região **eu-west-1**, oferecendo serviços para empresas europeias.
+
+---
+
+### Benefícios da Infraestrutura Global
+1. **Alta Disponibilidade**: Com várias AZs por região, falhas em um data center não afetam a disponibilidade geral.
+2. **Latência Reduzida**: Componentes como Zonas Locais e Pontos de Presença reduzem a distância entre usuários e serviços.
+3. **Escalabilidade**: A capacidade de crescer globalmente com facilidade.
+4. **Conformidade e Segurança**: Regiões e AZs ajudam as empresas a atender requisitos locais de conformidade e segurança.
+
+Essa infraestrutura global da AWS oferece flexibilidade para atender tanto startups quanto grandes empresas com necessidades locais e globais.
