@@ -15,6 +15,9 @@
    - Subnets
    - Tabela de Rotas
    - Network ACLs (NACLs)
+   - Security Group
+   - Elastic IP
+   - Virtual Private Gateway
 4. [Casos de Uso](#casos-de-uso)
 5. [Exemplos Didáticos](#exemplos-didáticos)
 6. [Boas Práticas](#boas-práticas)
