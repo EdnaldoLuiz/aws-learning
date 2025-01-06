@@ -45,6 +45,7 @@ O **Amazon Elastic Compute Cloud (EC2)** é um serviço fundamental da AWS que o
     - [10.1 Implantação de uma Aplicação Web](#101-implantação-de-uma-aplicação-web)
     - [10.2 Uso de Spot Instances para Processamento em Lote](#102-uso-de-spot-instances-para-processamento-em-lote)
 11. [Conclusão](#11-conclusão)
+12. [Pontos Chaves](#12-pontos-chave)
 12. [Links e Referências](#12-links-e-referências)
 
 ---
@@ -416,7 +417,51 @@ O **Amazon Elastic Compute Cloud (EC2)** é uma solução robusta e flexível pa
 
 ---
 
-## 12. Links e Referências
+## 12. Pontos-Chave
+
+- **Flexibilidade e Escalabilidade:**
+  - Possibilidade de ajustar o poder computacional com instâncias On-Demand, Reserved ou Spot.
+  - Suporte a escalabilidade horizontal e vertical com Auto Scaling.
+
+- **Variedade de Instâncias:**
+  - Ampla gama de tipos de instâncias, desde General Purpose até Accelerated Computing para workloads de machine learning e HPC.
+  - Instâncias otimizadas para diferentes casos de uso (ex.: t3 para custos baixos, p3 para GPUs avançadas).
+
+- **Segurança e Compliance:**
+  - Controle de acesso granular com IAM Roles.
+  - Suporte a criptografia em repouso e em trânsito (TLS/SSL).
+  - Ferramentas como Amazon Inspector e GuardDuty para análise de segurança.
+
+- **Armazenamento Integrado:**
+  - Armazenamento persistente com Amazon EBS.
+  - Opções de armazenamento temporário (Instance Store) para uso em dados voláteis.
+  - Suporte a sistemas de arquivos gerenciados (Amazon FSx).
+
+- **Curiosidades sobre Spot Instances:**
+  - Oferecem economia de até 90% comparado às instâncias On-Demand.
+  - Podem ser interrompidas com pouco aviso, ideais para cargas tolerantes a falhas.
+
+- **Certificação AWS (Dicas Importantes):**
+  - Conheça as diferenças entre os modelos de aquisição (On-Demand, Saving Plans e Spot Instances).
+  - Domine conceitos de Auto Scaling, Elastic Load Balancing e grupos de segurança.
+  - Esteja familiarizado com casos de uso de cada tipo de instância EC2.
+  - Entenda como configurar uma VPC com subnets públicas e privadas para instâncias EC2.
+  - Foque na gestão de custos e nas boas práticas de segurança para instâncias EC2.
+
+- **Casos de Uso Reais:**
+  - Aplicações web escaláveis.
+  - Backend para aplicativos móveis.
+  - Processamento de dados em lote e análise de big data.
+  - Treinamento e inferência de modelos de machine learning.
+
+- **Dicas para Uso Diário:**
+  - Utilize o **AWS Cost Explorer** para monitorar e otimizar gastos com EC2.
+  - Configure alarmes no **Amazon CloudWatch** para monitorar uso e desempenho.
+  - Atribua tags a instâncias EC2 para facilitar a gestão e organização.
+
+--- 
+
+## 13. Links e Referências
 
 Para aprofundar seu conhecimento sobre o **Amazon Elastic Compute Cloud (EC2)**, consulte os seguintes recursos oficiais e complementares:
 
