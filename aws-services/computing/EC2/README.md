@@ -1,7 +1,7 @@
 <h1 align="center">Elastic Compute Cloud (EC2)</h1>
 
 <div align="center">
-    <img width="250px" src="./../../assets/aws-services/computing/ec2.png" alt="Amazon EC2">
+    <img width="250px" src="./../../../assets/aws-services/computing/ec2.png" alt="Amazon EC2">
 </div>
 
 ---

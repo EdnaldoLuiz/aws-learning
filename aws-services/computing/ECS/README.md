@@ -1,7 +1,7 @@
 <h1 align="center">AWS Elastic Container Service (ECS)</h1>
 
 <div align="center">
-    <img width="250px" src="./../../assets/aws-services/computing/ecs.png" alt="ECS">
+    <img width="250px" src="./../../../assets/aws-services/computing/ecs.png" alt="ECS">
 </div>
 
 ---
