@@ -130,6 +130,7 @@ Os data centers são as unidades físicas que hospedam os servidores da AWS. Ele
 ---
 
 ### Benefícios da Infraestrutura Global
+
 1. **Alta Disponibilidade**: Com várias AZs por região, falhas em um data center não afetam a disponibilidade geral.
 2. **Latência Reduzida**: Componentes como Zonas Locais e Pontos de Presença reduzem a distância entre usuários e serviços.
 3. **Escalabilidade**: A capacidade de crescer globalmente com facilidade.
