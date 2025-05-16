@@ -30,3 +30,6 @@ A certificação **AWS Certified Developer – Associate (DVA-C02)** avalia a ca
 
 * **Monitoramento e Depuração**
   Uso de **Amazon CloudWatch**, **AWS X-Ray** e logs para inspecionar, monitorar e corrigir problemas em aplicações.
+
+---
+
