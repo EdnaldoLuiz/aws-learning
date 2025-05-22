@@ -15,6 +15,7 @@
    - [3.3 Integração e Comunicação](#33-integração-e-comunicação)  
    - [3.4 Segurança](#34-segurança)  
    - [3.5 Monitoramento e Depuração](#35-monitoramento-e-depuração)
+4. [Estratégias de Estudo e Preparação para o DVA-C02](#4-estratégias-de-estudo-e-preparação-para-o-dva-c02)  
 
 ---
 
@@ -89,3 +90,27 @@ A certificação exige conhecer vários serviços, mas alguns são críticos e a
 
 * **Amazon CloudWatch** → Logs, métricas, alarmes e dashboards personalizados.  
 * **AWS X-Ray** → Rastreamento e diagnóstico de requisições.
+
+---
+
+## 4. Estratégias de Estudo e Preparação para o DVA-C02
+
+### **4.1 Entenda o Formato do Exame**
+
+* **Número de questões**: 65 perguntas de múltipla escolha e múltipla resposta.
+* **Tempo**: 130 minutos.
+* **Pontuação mínima para aprovação**: \~720/1000.
+* **Formato**: Situações reais (cenários) que exigem identificar o serviço mais adequado ou a solução correta.
+
+---
+
+### **4.2 Roteiro de Estudo Sugerido**
+
+1. **Fundamentos** – Revise conceitos essenciais de nuvem e arquitetura AWS (regiões, AZs, VPC, IAM).
+2. **Serviços-chave** – Aprofunde-se nos serviços listados no ponto 3, especialmente Lambda, API Gateway, S3, DynamoDB e SQS/SNS.
+3. **Hands-on** – Use **AWS Free Tier** para criar e testar aplicações serverless e baseadas em eventos.
+4. **Prática com CLI e SDKs** – Automatize tarefas simples e integre aplicações com serviços AWS via SDK.
+5. **Segurança** – Estude IAM, roles, políticas e práticas seguras de acesso.
+6. **Monitoração e Troubleshooting** – Pratique com CloudWatch e X-Ray para identificar gargalos.
+
+---
