@@ -70,4 +70,22 @@ A certificação exige conhecer vários serviços, mas alguns são críticos e a
 ### 3.3 Integração e Comunicação
 
 * **Amazon API Gateway** → Criação e segurança de APIs REST/HTTP/WebSocket, integrações com Lambda e autenticação.  
-* **Amazon SNS / SQS** → Comunicação assíncrona com tópicos (pub/s*
+* **Amazon SNS / SQS** → Comunicação assíncrona com tópicos (pub/sub) e filas (mensageria).  
+* **AWS Step Functions** → Orquestração de workflows serverless com controle de estados.  
+* **Amazon EventBridge** → Roteamento de eventos entre serviços e sistemas externos.
+
+---
+
+### 3.4 Segurança
+
+* **AWS IAM** → Usuários, grupos, roles, políticas e credenciais temporárias.  
+* **AWS KMS** → Criptografia gerenciada e chaves CMK.  
+* **AWS Secrets Manager / SSM Parameter Store** → Armazenamento seguro de senhas e configurações.  
+* **Amazon Cognito** → Autenticação e autorização de usuários para aplicações web e mobile.
+
+---
+
+### 3.5 Monitoramento e Depuração
+
+* **Amazon CloudWatch** → Logs, métricas, alarmes e dashboards personalizados.  
+* **AWS X-Ray** → Rastreamento e diagnóstico de requisições.
