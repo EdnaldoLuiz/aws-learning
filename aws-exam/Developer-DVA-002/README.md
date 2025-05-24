@@ -15,7 +15,7 @@
    - [3.3 Integração e Comunicação](#33-integração-e-comunicação)  
    - [3.4 Segurança](#34-segurança)  
    - [3.5 Monitoramento e Depuração](#35-monitoramento-e-depuração)
-4. [Estratégias de Estudo e Preparação para o DVA-C02](#4-estratégias-de-estudo-e-preparação-para-o-dva-c02)  
+4. [Estratégias de Estudo e Preparação para o DVA-C02](#4-estratégias-de-estudo-e-preparação-para-o-dva-c02)
 
 ---
 
