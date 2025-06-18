@@ -6,6 +6,12 @@
 
 ---
 
+## Índice
+1. [Introdução](#1-introdução)  
+2. [Escopo e Fundamentos da Certificação](#2-escopo-e-fundamentos-da-certificação)  
+
+---
+
 ## 1. Introdução
 
 A certificação **AWS Certified Solutions Architect – Associate (SAA-C03)** é destinada a profissionais que desejam validar suas habilidades em projetar soluções distribuídas e escaláveis na AWS. Ela comprova o conhecimento em **arquitetar sistemas seguros, de alta disponibilidade, tolerantes a falhas e com custo otimizado**, usando os serviços e melhores práticas recomendados pela AWS.  
