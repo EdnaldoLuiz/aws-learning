@@ -16,6 +16,7 @@
    - [3.4 Rede e Entrega de Conteúdo](#34-rede-e-entrega-de-conteúdo)  
    - [3.5 Segurança e Identidade](#35-segurança-e-identidade)  
    - [3.6 Monitoramento e Operações](#36-monitoramento-e-operações)  
+4. [Estratégias de Estudo e Preparação para o SAA-C03](#4-estratégias-de-estudo-e-preparação-para-o-saa-c03)  
 
 ---
 
@@ -110,3 +111,33 @@ A prova do SAA-C03 é bem distribuída entre várias áreas, mas alguns serviço
 - **AWS Config** → Conformidade e histórico de configurações.  
 
 ---
+
+## 4. Estratégias de Estudo e Preparação para o SAA-C03
+
+### 4.1 Entenda o Formato do Exame
+- **Número de questões**: 65 perguntas de múltipla escolha ou múltipla resposta.  
+- **Tempo**: 130 minutos.  
+- **Pontuação mínima para aprovação**: ~720/1000.  
+- **Formato**: Cenários reais que exigem análise de requisitos e escolha da arquitetura mais adequada.  
+- **Idioma**: Disponível em português e inglês (vale treinar os termos técnicos em inglês).
+
+---
+
+### 4.2 Roteiro de Estudo Sugerido
+1. **Fundamentos de Arquitetura** – Estude os pilares do *AWS Well-Architected Framework* (Operacional, Segurança, Confiabilidade, Desempenho e Otimização de Custos).  
+2. **Serviços Críticos** – Domine os tópicos do item 3, especialmente EC2, S3, RDS, VPC, CloudFront e Route 53.  
+3. **Design para Alta Disponibilidade** – Pratique arquiteturas multi-AZ, multi-região, failover e escalabilidade automática.  
+4. **Segurança e Identidade** – Entenda IAM, Security Groups, NACLs, KMS e práticas de criptografia ponta a ponta.  
+5. **Networking** – Treine cenários com VPC, subnets, NAT, endpoints e balanceadores.  
+6. **Otimização de Custos** – Saiba escolher instâncias, classes de armazenamento e estratégias de *lifecycle* no S3.  
+7. **Hands-on** – Use o **AWS Free Tier** para criar ambientes completos, simulando cenários de prova.  
+8. **Simulados** – Resolva *practice exams* e analise o *feedback* para reforçar pontos fracos.
+
+---
+
+### 4.3 Dicas de Ouro
+- **Leia o enunciado até o fim** — a AWS gosta de inserir pegadinhas com requisitos implícitos.  
+- **Priorize soluções gerenciadas** — na maioria dos cenários, a opção mais escalável e resiliente é a correta.  
+- **Cuidado com custos** — se o enunciado citar “otimizar custos”, avalie *Reserved Instances*, *Spot Instances* e S3 IA/Glacier.  
+- **Pense em segurança por padrão** — se o requisito envolver dados sensíveis, aplique criptografia e restrinja acessos.  
+- **Decore limites importantes** — por exemplo, tempo de execução do Lambda, limites de VPC e instâncias suportadas por tipo.  
