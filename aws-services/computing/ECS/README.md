@@ -19,6 +19,7 @@ O **Amazon Elastic Container Service (ECS)** é um serviço de **orquestração 
    - [Container no EC2](#21-container-no-ec2)
    - [Container no Fargate](#22-container-no-fargate)
    - [Container no Fargate com Spot Instance](#23-container-no-fargate-com-spot-instance)
+   - [ECS Anywhere](#24-anywhere)
 3. [Recursos do ECS](#3-recursos-do-ecs)
    - [Orquestração](#31-orquestração)
    - [Segurança](#32-segurança)
@@ -93,6 +94,23 @@ Este modelo combina os benefícios do **Fargate** com a **redução de custos** 
 
 - **Exemplo de Uso:**
   - Processamento de dados em lote ou tarefas de machine learning que podem ser interrompidas e retomadas sem impacto significativo.
+
+### 2.4 ECS Anywhere
+
+O **ECS Anywhere** permite que você execute e gerencie containers em **infraestrutura própria ou em outras nuvens** (on-premises, edge ou multi-cloud), mantendo a mesma experiência de orquestração do ECS.
+
+- **Características:**
+  - **Ambiente Híbrido:** Gerencie containers fora da AWS com o controle do ECS.
+  - **Sem lock-in:** Use suas próprias VMs, servidores físicos ou até outras nuvens.
+  - **Monitoramento Integrado:** Os agentes do ECS se registram diretamente no cluster ECS, permitindo visibilidade centralizada.
+  - **Segurança:** Integração com IAM, CloudWatch e Secrets Manager, mesmo fora da AWS.
+
+- **Exemplo de Uso:**
+  1. Empresa com data center local roda serviços legados em bare metal e quer unificar a orquestração com workloads já em ECS.
+  2. Sistema industrial em ambiente restrito (ex: fábrica) executa containers localmente, mas com observabilidade via ECS.
+  3. Ambiente com aplicações sensíveis à latência (ex: IoT ou edge computing) roda containers no local, mas gerencia tudo pela AWS.
+
+> Obs: É necessário instalar o **ECS Agent** e configurar os requisitos de autenticação IAM para registrar a máquina no cluster ECS.
 
 ---
 
