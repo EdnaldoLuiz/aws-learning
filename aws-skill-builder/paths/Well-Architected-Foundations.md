@@ -6,6 +6,7 @@
 
 ---
 
+
 ## Índice
 1. [O que é](#o-que-é)
 2. [Por que usar (na prática)](#por-que-usar-na-prática)
