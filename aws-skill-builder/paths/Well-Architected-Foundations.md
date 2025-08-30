@@ -6,7 +6,6 @@
 
 ---
 
-
 ## Índice
 1. [O que é](#o-que-é)
 2. [Por que usar (na prática)](#por-que-usar-na-prática)
@@ -48,74 +47,149 @@ Ele traz **perguntas, princípios e controles** que ajudam você a **avaliar** e
 
 ---
 
-## Os 6 Pilares
+## AWS Well-Architected Framework: Os 6 Pilares Fundamentais
 
-### Operational Excellence
-Executar e **operar como código**, monitorar, aprender com falhas e melhorar processos continuamente (CI/CD, IaC, observabilidade, runbooks, game days).
+## 🎯 Operational Excellence
 
-### Security
-**Identidade forte**, **rastreamento**, **segurança em camadas**, **automatização**, **proteção de dados** e prontidão para incidentes (IAM, KMS, CloudTrail, Config, Security Hub).
+### Princípios Essenciais
+- **Operações como código**: Infraestrutura e processos definidos e gerenciados através de código
+- **Mudanças pequenas e reversíveis**: Implementar alterações graduais com capacidade de rollback
+- **Refinamento contínuo**: Evolução constante de procedimentos operacionais
+- **Antecipação de falhas**: Realização de pre-mortems e game days proativos
+- **Aprendizado contínuo**: Análise sistemática de todas as falhas operacionais
 
-### Reliability
-Projetar para **falhar e se recuperar**. **Automação**, **escalabilidade horizontal**, **capacidade correta**, **backup/DR** e **testes de recuperação** (Multi-AZ, Auto Scaling, Route 53, Backup).
+### Práticas-Chave
+- **IaC (Infrastructure as Code)**: AWS CloudFormation, Terraform
+- **CI/CD**: AWS CodePipeline, CodeBuild, CodeDeploy
+- **Observabilidade**: Amazon CloudWatch, AWS X-Ray, Dashboards
+- **Runbooks/Playbooks**: Documentação operacional automatizada
+- **Game Days**: Simulações regulares de falhas
 
-### Performance Efficiency
-Usar recursos **eficientemente** e **escalar**. **Serverless**, **cache**, **experimentos frequentes**, **global em minutos**.
+### Serviços AWS Principais
+```plaintext
+CloudFormation, CodeSuite, CloudWatch, Systems Manager, X-Ray
+```
 
-### Cost Optimization
-**Modelo de consumo**, medir **eficiência**, **eliminar undifferentiated heavy lifting**, **atribuir custos**, **gerenciar financeiramente** (SP/RI, Budgets, CUR).
+## 🔒 Security
 
-### Sustainability
-Minimizar impacto ambiental: **entender impacto**, **metas**, **maximizar utilização**, **hardware/soft eficientes**, **managed services** e **redução de downstream**.
+### Princípios Fundamentais
+- **Base sólida de identidade**: IAM forte com princípio do menor privilégio
+- **Rastreabilidade completa**: Logging, monitoring e auditoria integrados
+- **Defesa em profundidade**: Múltiplas camadas de segurança
+- **Automatização de segurança**: Controles definidos como código
+- **Proteção de dados**: Criptografia em trânsito e repouso
+- **Separação de acesso**: Minimizar acesso humano direto a dados
+- **Preparação para incidentes**: Planos de resposta testados
+
+### Implementações Críticas
+- **IAM**: MFA, políticas baseadas em tags, roles temporárias
+- **Monitoring**: AWS CloudTrail, GuardDuty, Security Hub
+- **Proteção de Dados**: AWS KMS, CloudHSM, Certificate Manager
+- **Network Security**: Security Groups, NACLs, AWS WAF, Shield
+- **Compliance**: AWS Config, Audit Manager, Artifact
+
+### Serviços AWS Essenciais
+```plaintext
+IAM, KMS, CloudTrail, GuardDuty, WAF, Shield, Security Hub, Config
+```
+
+## ⚡ Reliability
+
+### Princípios Centrais
+- **Recuperação automática**: Auto-healing baseado em monitoring
+- **Testes de recuperação**: Validação regular de procedures de DR
+- **Escalabilidade horizontal**: Arquiteturas distribuídas e resilientes
+- **Gestão de capacidade**: Monitoramento contínuo de demanda
+- **Gestão de mudanças**: Automação de deployments e rollbacks
+
+### Estratégias de Implementação
+- **Multi-AZ/Multi-Region**: Distribuição geográfica de cargas
+- **Auto Scaling**: Ajuste dinâmico de capacidade
+- **Load Balancing**: Distribuição inteligente de tráfego
+- **Backup/DR**: Estratégias baseadas em RTO/RPO
+- **Circuit Breakers**: Padrões de resiliência em aplicações
+
+### Serviços AWS Chave
+```plaintext
+Route 53, ELB, Auto Scaling, RDS Multi-AZ, DynamoDB Global Tables, Backup
+```
+
+## 🚀 Performance Efficiency
+
+### Princípios Orientadores
+- **Democratização tecnológica**: Acesso a tecnologias avançadas via serviços gerenciados
+- **Capacidade global**: Deploy multi-region em minutos
+- **Arquiteturas serverless**: Foco em valor de negócio, não em infraestrutura
+- **Experimentação constante**: Testes comparativos de performance
+- **Simpatia mecânica**: Alinhamento entre tecnologia e padrões de uso
+
+### Otimizações Essenciais
+- **Seleção de recursos**: Escolha ótima de instâncias, storage e databases
+- **Caching**: Implementação estratégica de camadas de cache
+- **CDN**: Distribuição global de conteúdo
+- **Otimização de queries**: Análise e tuning de performance
+- **Escalabilidade elástica**: Ajuste automático baseado em demanda
+
+### Serviços AWS de Performance
+```plaintext
+Lambda, Fargate, CloudFront, ElastiCache, Aurora, S3 Transfer Acceleration
+```
+
+## 💰 Cost Optimization
+
+### Princípios Econômicos
+- **Cloud Financial Management**: Governança financeira como disciplina
+- **Modelo de consumo**: Pagamento apenas pelo uso efetivo
+- **Medição de eficiência**: ROI e métricas de custo-benefício
+- **Eliminação de overhead**: Foco em diferenciação competitiva
+- **Transparência de custos**: Atribuição clara e precisa de gastos
+
+### Estratégias de Economia
+- **Right Sizing**: Adequação precisa de recursos à demanda
+- **Spot Instances**: Utilização de capacidade ociosa com desconto
+- **Reserved Instances**: Compromissos de longo prazo para economias
+- **Lifecycle Management**: Automatização de retenção e deleção
+- **Tagging**: Categorização completa para alocação de custos
+
+### Serviços de Gestão de Custos
+```plaintext
+Cost Explorer, Budgets, Cost & Usage Report, Savings Plans, Compute Optimizer
+```
+
+## 🌱 Sustainability
+
+### Princípios de Sustentabilidade
+- **Consciência do impacto**: Medição e monitoramento de impacto ambiental
+- **Metas de redução**: Estabelecimento de objetivos claros de sustentabilidade
+- **Maximização de utilização**: Otimização da eficiência energética
+- **Adoção de inovações**: Uso de hardware e software mais eficientes
+- **Serviços gerenciados**: Aproveitamento de economias de escala
+- **Redução downstream**: Minimização do impacto em dispositivos clientes
+
+### Práticas Sustentáveis
+- **Seleção de regiões**: Escolha baseada em eficiência energética
+- **Otimização de código**: Redução de consumo de recursos
+- **Padrões de arquitetura**: Designs energeticamente eficientes
+- **Gestão de dados**: Políticas de retenção e deletion
+- **Monitoramento**: Métricas de consumo energético e eficiência
+
+### Serviços AWS Sustentáveis
+```plaintext
+AWS Customer Carbon Footprint Tool, Graviton-based Instances, S3 Intelligent-Tiering
+```
 
 ---
 
-## Princípios Canônicos por Pilar
+## 📊 Tabela Comparativa dos Pilares
 
-**Operational Excellence**
-- Operar **como código**
-- Mudanças **pequenas e reversíveis**
-- Refinar procedimentos com frequência
-- **Antecipar falhas**
-- **Aprender** com todas as falhas
-
-**Security**
-- Base **forte de identidade**
-- **Rastreabilidade** habilitada
-- Segurança em **todas as camadas**
-- **Automatizar** melhores práticas
-- Proteger dados **em trânsito** e **em repouso**
-- **Manter pessoas longe dos dados**
-- Preparar-se para **incidentes**
-
-**Reliability**
-- **Recuperação automática** de falhas
-- **Testar** procedimentos de recuperação
-- **Escalar horizontalmente**
-- **Parar de adivinhar capacidade**
-- **Gerenciar mudanças** com automação
-
-**Performance Efficiency**
-- **Democratizar** tecnologias avançadas
-- **Ir global em minutos**
-- **Arquiteturas serverless**
-- **Experimentar com frequência**
-- **Mechanical sympathy** (escolher o que melhor casa com o padrão de uso)
-
-**Cost Optimization**
-- **Cloud Financial Management**
-- **Modelo de consumo**
-- Medir **eficiência global**
-- Cortar **undifferentiated heavy lifting**
-- **Analisar e atribuir** despesas
-
-**Sustainability**
-- **Entender o impacto**
-- **Estabelecer metas**
-- **Maximizar utilização**
-- Adotar hardware/soft mais **eficientes**
-- Preferir **serviços gerenciados**
-- Reduzir impacto **downstream** (rede/cliente)
+| Pilar | Foco Principal | Métricas-Chave | Serviços AWS Críticos |
+|-------|----------------|----------------|-----------------------|
+| **Operational Excellence** | Operações eficientes e melhoria contínua | MTTR, MTBF, Deployment Frequency | CloudFormation, CodePipeline, CloudWatch |
+| **Security** | Proteção de dados e sistemas | Time to Detect, Time to Respond | IAM, KMS, GuardDuty, Security Hub |
+| **Reliability** | Disponibilidade e resiliência | Availability, RTO, RPO | Route 53, Auto Scaling, Multi-AZ |
+| **Performance Efficiency** | Eficiência de recursos | Latency, Throughput, Utilization | Lambda, CloudFront, ElastiCache |
+| **Cost Optimization** | Otimização econômica | Cost per Transaction, ROI | Cost Explorer, Savings Plans, Budgets |
+| **Sustainability** | Impacto ambiental | Carbon Footprint, Energy Efficiency | Carbon Footprint Tool, Graviton Instances |
 
 ---
 
