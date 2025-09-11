@@ -135,3 +135,11 @@ Os data centers são as unidades físicas que hospedam os servidores da AWS. Ele
 
 Essa infraestrutura global da AWS oferece flexibilidade para atender tanto startups quanto grandes empresas com necessidades locais e globais.
 
+
+```java
+public class Main {
+   public static void main(String[] args) {
+   
+   }
+}
+```
