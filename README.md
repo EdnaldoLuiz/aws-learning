@@ -1,9 +1,6 @@
-<h1 align=center> Guia sobre Amazon Web Services (AWS) </h1>
+# Guia sobre Amazon Web Services (AWS)
 
- <p align="center">
- <img src="./assets/aws.png">
-  <br />
-</p>
+![AWS](./assets/aws.png)
 
 ## O que é Computação em Nuvem?
 
@@ -137,3 +134,4 @@ Os data centers são as unidades físicas que hospedam os servidores da AWS. Ele
 4. **Conformidade e Segurança**: Regiões e AZs ajudam as empresas a atender requisitos locais de conformidade e segurança.
 
 Essa infraestrutura global da AWS oferece flexibilidade para atender tanto startups quanto grandes empresas com necessidades locais e globais.
+
