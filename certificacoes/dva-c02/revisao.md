@@ -1,0 +1,14 @@
+# Revisão por recuperação ativa — DVA-C02
+
+Estado do material: **em revisao**. Progresso pessoal: pendente. Este roteiro organiza uma sessão; não registra que ela aconteceu.
+
+1. Escolha um assunto do [mapa inicial](README.md#mapa-inicial-de-assuntos) e uma pergunta concreta.
+2. Feche as notas e explique conceitos, decisões e limites com suas palavras.
+3. Resolva um [cenário](../../laboratorios/cenarios-fundamentais/README.md) ou uma [pergunta fundamental](../perguntas-fundamentais.md), explicitando o requisito decisivo.
+4. Confira a explicação principal e as fontes oficiais; se não puder acessar, marque a confirmação pendente.
+5. Registre dúvidas e raciocínio incorreto em [erros](erros.md), com correção e motivo.
+6. Atualize progresso e próxima revisão no [roadmap](../../ROADMAP.md); intervalos ajustáveis de 1, 7 e 30 dias podem orientar a agenda depois da sessão real.
+
+Critério de conclusão da sessão: explicar o conceito sem copiar, resolver um cenário com justificativa e identificar ao menos uma condição que muda a escolha. Isso não equivale a dominar todo o assunto nem a estar pronto para o exame.
+
+[Voltar à trilha](README.md) · [Anotações](anotacoes.md)

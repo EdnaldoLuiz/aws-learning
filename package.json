@@ -1,0 +1,17 @@
+{
+  "name": "aws-learning-docs",
+  "private": true,
+  "scripts": {
+    "check": "npm run lint:markdown && npm run check:links",
+    "lint:markdown": "markdownlint-cli2",
+    "check:links": "node scripts/check-links.mjs",
+    "test": "node --test scripts/check-links.test.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": {
+    "github-slugger": "2.0.0",
+    "htmlparser2": "10.0.0",
+    "markdown-it": "14.1.0",
+    "markdownlint-cli2": "0.18.1"
+  }
+}

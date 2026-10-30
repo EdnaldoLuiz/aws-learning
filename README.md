@@ -1,145 +1,65 @@
-# Guia sobre Amazon Web Services (AWS)
+# AWS Learning
 
-![AWS](./assets/aws.png)
+Repositório de anotações para estudar, consultar, praticar e revisar AWS. As explicações principais ficam em fundamentos e serviços; cursos preservam a origem do aprendizado e certificações conectam objetivos, revisão e dúvidas.
 
-## O que é Computação em Nuvem?
+![AWS](assets/aws.png)
 
-É um modelo de entrega de serviços e recursos de T.I pela internet.
-Permite o cliente consumir serviços e recursos como servidores, armazenamento, bancos de dados, redes, softwares e afins.
-Em vez de armazenar em servidores físicos locais, usa-se a internet e um provedor de serviços para ter acesso a esses recursos.
+## Comece aqui
 
-## Pay As You Go (PAYG)
+1. Abra o [roadmap de estudo](ROADMAP.md) e escolha uma etapa compatível com seu conhecimento.
+2. Leia a referência principal e tente explicá-la sem consultar.
+3. Resolva [perguntas fundamentais](certificacoes/perguntas-fundamentais.md) e [cenários conceituais](laboratorios/cenarios-fundamentais/README.md).
+4. Registre dúvidas e planeje uma revisão na [trilha de certificação escolhida](certificacoes/README.md), sem marcar progresso antes da sessão real.
 
-O modelo **Pagar conforme o uso** na computação em nuvem é extremamente vantajoso, pois permite que você pague apenas pelos recursos que realmente utiliza, em vez de investir antecipadamente em infraestrutura fixa. Isso torna o custo mais eficiente e flexível.
+## Mapa do acervo
 
-### Benefícios:
-1. **Redução de Custos Iniciais**:  
-   Você não precisa comprar servidores ou equipamentos caros. Exemplo: uma startup pode lançar seu site pagando apenas pelos acessos reais, sem gastar milhares em servidores físicos.
+| Área | Ponto de entrada |
+| --- | --- |
+| [Fundamentos](fundamentos/README.md) | Conceitos de nuvem, infraestrutura, responsabilidades e arquitetura |
+| [Serviços](servicos/README.md) | Referências principais por categoria |
+| [Cursos](cursos/README.md) | Educate, Skill Builder e Partner, com contexto do aprendizado |
+| [Certificações](certificacoes/README.md) | Mapas iniciais, anotações, revisão e registro de erros |
+| [Laboratórios](laboratorios/README.md) | Cenários conceituais e roteiro SSH ainda não executado |
 
-2. **Escalabilidade**:  
-   Você pode aumentar ou reduzir os recursos conforme a demanda. Exemplo: um e-commerce pode escalar recursos na Black Friday e reduzi-los no restante do ano.
+A organização e suas decisões estão no [plano](PLANO-DE-ORGANIZACAO.md); origem, destinos e limites estão no [registro da migração](MIGRACAO.md).
 
-3. **Previsibilidade Financeira**:  
-   Como você paga apenas pelo uso (horas de servidor, GB de armazenamento, etc.), os custos são proporcionais à sua necessidade real. Exemplo: uma empresa que usa computação para processamento de dados em horários específicos paga apenas pelo período usado.
+## Áreas de apoio
 
-4. **Evita ociosidade**:  
-   Recursos ociosos são eliminados. Exemplo: uma plataforma de streaming paga apenas pelo consumo de dados e largura de banda durante os acessos dos usuários.
+| Área | Finalidade |
+| --- | --- |
+| [Assets](assets/README.md) | Imagens preservadas e navegação por assunto |
+| [Templates](templates/README.md) | Modelos de nota de serviço e roteiro de laboratório |
+| [Scripts](scripts/README.md) | Verificador de links, testes e instruções de validação |
+| [.github](.github/README.md) | Automação das verificações em push e pull request |
 
-## Diferenças entre Capex e Opex
+## Estado do material e progresso pessoal
 
-Quando discutimos computação em nuvem e modelos de pagamento como o **Pay As You Go**, é importante entender a diferença entre **Capex (Capital Expenditure)** e **Opex (Operational Expenditure)**, pois isso influencia diretamente a forma como as empresas gerenciam seus custos de TI.
+- **rascunho:** conteúdo em construção, com lacunas identificadas.
+- **em revisao:** conteúdo organizado, com revisão técnica ou confirmação de fontes ainda pendente.
+- **revisado:** conferido no escopo declarado, com fontes e data da revisão; não significa que nunca mudará.
 
-### O que é Capex?
+Esses estados descrevem a qualidade do texto. **Estudado, praticado e revisado** no roadmap descrevem sessões pessoais e ficam pendentes até registro real. Notas, imagens de badge e roteiros não comprovam curso concluído, certificação obtida ou laboratório executado.
 
-**Capex** refere-se a despesas de capital, ou seja, investimentos em bens tangíveis ou ativos fixos que serão utilizados a longo prazo. Em TI, isso inclui:
-- Compra de servidores físicos
-- Construção ou manutenção de data centers
-- Aquisição de softwares licenciados de forma perpétua
+Esta reconstrução corrige problemas identificados e valida arquivos locais; não é uma auditoria técnica integral. Fontes AWS bloquearam acesso em 2026-10-30. Preços, quotas, ofertas, ciclo de serviços e códigos/guias vigentes dos exames exigem consulta antes de uso.
 
-Esses custos geralmente exigem um **investimento inicial elevado** e possuem um ciclo de amortização ou depreciação ao longo do tempo.
+## Como contribuir com as notas
 
-**Exemplo**: Uma empresa que compra servidores físicos para um data center local gasta uma grande quantia inicial e só recupera esse investimento ao longo de anos de operação.
+Use nomes novos em minúsculas, sem acentos e com hífens; mantenha nomes oficiais no texto. `README.md`, `ROADMAP.md`, `PLANO-DE-ORGANIZACAO.md` e `MIGRACAO.md` são exceções convencionais. Caminhos legados das imagens foram preservados quando útil.
 
-### O que é Opex?
+Mantenha uma explicação principal por assunto, estado do material, contexto de origem e fontes. Use links relativos entre arquivos e evite URLs GitHub fixadas em `main`. Tópicos só planejados pertencem ao roadmap, sem arquivos vazios. Ao consolidar, preserve conteúdo exclusivo.
 
-**Opex** refere-se a despesas operacionais, ou seja, custos recorrentes associados às operações do dia a dia. Na computação em nuvem, isso envolve:
-- Pagamento por uso de recursos (como servidores virtuais, armazenamento e redes)
-- Serviços de manutenção e suporte inclusos
-- Escalabilidade de custos conforme a demanda
+Toda nova pasta do projeto deve receber **README com finalidade, conteúdo, ponto de entrada e navegação de volta**, exceto `.git`, `node_modules` e outros diretórios gerados. Uma nota simples pode ser arquivo; laboratório com arquivos auxiliares deve ter pasta própria.
 
-Esse modelo permite **flexibilidade e previsibilidade**, sem a necessidade de grandes investimentos iniciais.
+Não versione credenciais, `.pem` ou `.env`. Roteiros devem informar custos, autorização, resultado verificável e limpeza seletiva, distinguindo exemplo de execução real.
 
-**Exemplo**: Uma empresa que usa serviços da AWS paga mensalmente pelos recursos consumidos, sem precisar investir em servidores ou infraestrutura física.
+## Validação local
 
-### Comparação
+Requisito: Node.js 20 ou superior; esta reconstrução e o workflow usam Node.js 24.
 
-| Aspecto                  | **Capex**                              | **Opex**                            |
-|--------------------------|-----------------------------------------|--------------------------------------|
-| **Investimento Inicial** | Elevado                                | Baixo ou inexistente                |
-| **Escalabilidade**       | Limitada (depende de novos investimentos) | Alta (ajuste conforme a demanda)    |
-| **Flexibilidade**        | Baixa                                  | Alta                                |
-| **Planejamento Financeiro** | Amortizado ao longo do tempo         | Pagamento proporcional ao uso       |
-| **Exemplo**              | Compra de servidores próprios          | Uso de serviços AWS (Pay As You Go) |
-
-### Benefícios de usar Opex com Computação em Nuvem
-
-1. **Menor Risco Financeiro**: Evita gastos desnecessários em infraestrutura que pode ficar subutilizada.  
-2. **Agilidade**: Recursos podem ser ativados ou desativados rapidamente, sem grandes custos adicionais.  
-3. **Acesso a Tecnologias Modernas**: Sem a necessidade de atualizações caras, a empresa sempre usa os serviços mais recentes.  
-
-Adotar o modelo de **Opex** por meio da computação em nuvem é uma estratégia ideal para empresas que desejam ser mais ágeis, escaláveis e eficientes em seus gastos de TI.
-
----
-
-## Infraestrutura Global da AWS
-
-A AWS possui uma infraestrutura global projetada para oferecer **baixa latência**, **alta disponibilidade** e **escalabilidade**. Ela é composta por diversos componentes fundamentais, como regiões, zonas de disponibilidade (AZs), zonas locais, pontos de presença, AWS Wavelength e AWS Outposts. Vamos explorar cada um desses conceitos com exemplos claros.
-
----
-
-### **Regiões**
-As regiões são localizações físicas geográficas onde a AWS opera data centers. Cada região é composta por várias Zonas de Disponibilidade (AZs) e é projetada para funcionar de forma independente em termos de disponibilidade e segurança.
-
-- **Exemplo**: A região **"sa-east-1"** (São Paulo) serve empresas na América Latina, permitindo menor latência para os usuários brasileiros.
-
----
-
-### **Zonas de Disponibilidade (AZs)**
-Zonas de Disponibilidade são localizações distintas e isoladas dentro de uma região, conectadas por redes de alta velocidade e baixa latência. Cada AZ possui um ou mais data centers.
-
-- **Exemplo**: Na região de São Paulo, a AWS oferece 3 AZs (sa-east-1a, sa-east-1b, sa-east-1c). Se um data center de uma AZ falhar, os recursos em outra AZ continuam funcionando.
-
----
-
-### **Zonas Locais**
-As Zonas Locais aproximam serviços de computação, armazenamento e rede da AWS aos usuários finais, reduzindo a latência. Elas são extensões de uma região AWS.
-
-- **Exemplo**: Uma empresa de streaming em Los Angeles pode usar a **Zona Local de Los Angeles** para garantir baixa latência ao transmitir vídeos para clientes da região.
-
----
-
-### **Pontos de Presença (Edge Locations)**
-Os Pontos de Presença são locais usados para entregar conteúdo por meio do **Amazon CloudFront** (rede de entrega de conteúdo - CDN). Isso melhora a experiência do usuário ao armazenar em cache dados frequentemente acessados.
-
-- **Exemplo**: Uma empresa global pode utilizar um ponto de presença em **Lima, Peru**, para armazenar em cache conteúdo estático, acelerando o acesso para usuários peruanos.
-
----
-
-### **AWS Wavelength**
-O AWS Wavelength integra serviços da AWS diretamente em redes 5G de provedores de telecomunicações para entregar latência ultrabaixa a dispositivos móveis.
-
-- **Exemplo**: Um desenvolvedor de jogos em tempo real pode usar o AWS Wavelength na rede 5G da **Verizon nos EUA** para fornecer experiências rápidas e responsivas para jogadores.
-
----
-
-### **AWS Outposts**
-O AWS Outposts permite que os serviços da AWS sejam executados no local do cliente (on-premises), oferecendo a mesma infraestrutura, APIs e ferramentas da nuvem AWS.
-
-- **Exemplo**: Um hospital que precisa manter dados sensíveis localmente, mas deseja usar os serviços da AWS, pode instalar um **AWS Outpost** em seu data center para processar dados localmente enquanto os integra à nuvem.
-
----
-
-### **Data Centers**
-Os data centers são as unidades físicas que hospedam os servidores da AWS. Eles são projetados para oferecer alta redundância e segurança, suportando os serviços das regiões e AZs.
-
-- **Exemplo**: Os data centers em **Dublin (Irlanda)** suportam a região **eu-west-1**, oferecendo serviços para empresas europeias.
-
----
-
-### Benefícios da Infraestrutura Global
-
-1. **Alta Disponibilidade**: Com várias AZs por região, falhas em um data center não afetam a disponibilidade geral.
-2. **Latência Reduzida**: Componentes como Zonas Locais e Pontos de Presença reduzem a distância entre usuários e serviços.
-3. **Escalabilidade**: A capacidade de crescer globalmente com facilidade.
-4. **Conformidade e Segurança**: Regiões e AZs ajudam as empresas a atender requisitos locais de conformidade e segurança.
-
-Essa infraestrutura global da AWS oferece flexibilidade para atender tanto startups quanto grandes empresas com necessidades locais e globais.
-
-
-```java
-public class Main {
-   public static void main(String[] args) {
-   
-   }
-}
+```bash
+npm ci --ignore-scripts
+npm test
+npm run check
 ```
+
+O check executa lint Markdown e validação de links locais, incluindo HTML, imagens e âncoras. Não consulta fontes externas nem comprova atualização técnica ou execução remota do GitHub Actions. Veja [como interpretar os resultados](scripts/README.md).
