@@ -11,40 +11,18 @@ Estado do material: **em revisao**. Progresso pessoal: pendente. Este roteiro or
 
 Critério de conclusão da sessão: explicar o conceito sem copiar, resolver um cenário com justificativa e identificar ao menos uma condição que muda a escolha. Isso não equivale a dominar todo o assunto nem a estar pronto para o exame.
 
-## Registro de compreensão — Static stability
+## Dúvida técnica — Static stability
 
-Sessão de estudo: **novembro de 2026, Operação SAA — Semana 1, Dia 1**. O exercício abaixo registra uma dúvida real e a correção técnica e linguística, **não** um conceito já dominado.
+Sessão: **Operação SAA — Semana 1, Dia 1 (novembro de 2026)**.
 
-### Original e versão corrigida lado a lado
+**Dúvida identificada:** estabilidade estática exige que cada instância consiga suportar todo o tráfego sozinha, sem dividir a carga?
 
-| Frase original (exatamente como escrita) | Versão com inglês corrigido (mesma pergunta) |
-| --- | --- |
-| "so, the other question, static stability is like, each instance can handle all the traffic, like, a single component can always handle everything and never having a shared work with other equal components?" | "Does static stability mean that each instance must be able to handle all the traffic by itself, without sharing the workload with other instances?" |
+**Resposta:** não. O requisito é que **os recursos saudáveis remanescentes, em conjunto**, já tenham capacidade suficiente para atender à demanda prevista após uma falha, sem depender de provisionar novos recursos durante o incidente.
 
-**Importante:** a segunda coluna corrige **o inglês e a clareza da pergunta**, mas **não transforma a hipótese em uma afirmação técnica correta**. A resposta à pergunta é **não**.
+**Exemplo:** uma aplicação recebe **1.500 req/s** e opera em duas AZs. Cada AZ tem **três instâncias EC2 capazes de 500 req/s cada**, totalizando **1.500 req/s por AZ**. Se uma AZ falhar, as três instâncias sobreviventes **compartilham a carga**, sem que uma única instância precise processar todas as requisições.
 
-### Ajustes explicados
+**Ponto para revisar:** distinguir capacidade por instância de capacidade agregada por zona e justificar o custo da capacidade reservada. A dúvida foi esclarecida na sessão, mas a compreensão deve ser verificada novamente por recuperação ativa.
 
-| Trecho original | Ajuste ou problema | Por quê |
-| --- | --- | --- |
-| "so, the other question" | Ir direto a "Does static stability mean..." | A introdução coloquial é desnecessária; a pergunta fica mais clara e direta. |
-| "static stability is like" | "Does static stability mean that..." | Para perguntar por uma definição, essa construção é mais natural e gramatical. |
-| "each instance can handle all the traffic" | "each instance must be able to handle all the traffic" | A reformulação preserva a hipótese, mas expressa precisamente a dúvida sobre um requisito. **A hipótese técnica continua incorreta.** |
-| "like, a single component can always handle everything" | Retirar a repetição e a afirmação absoluta | Repete a ideia e usa **always**, que exagera o conceito. |
-| "never having a shared work with other equal components" | "without sharing the workload with other instances" | **Workload** é o termo habitual para carga de trabalho; **share the workload** é a expressão idiomática. Instâncias equivalentes podem, sim, compartilhar tráfego. |
-
-### Resposta técnica correta
-
-> **Static stability does not mean that each instance must handle all traffic alone. It means the surviving infrastructure already has enough capacity to handle the required workload after an anticipated failure, without relying on provisioning new resources during that failure.**
-
-Por exemplo, com demanda de **1.500 req/s** e duas AZs contendo **três EC2 de 500 req/s cada**, **uma AZ inteira** pode atender à demanda após a falha da outra. As três instâncias remanescentes **compartilham** os 1.500 req/s; nenhuma precisa atender tudo sozinha. A detecção da falha e o roteamento ainda podem levar algum tempo.
-
-**Frase para praticar em inglês:**
-
-> "Static stability means that the remaining healthy instances can handle the full workload together, without launching new instances during the failure."
-
-**Autoavaliação:** dúvida registrada e explicação fornecida; ainda falta explicar o conceito com suas próprias palavras em uma nova tentativa. Não marcar como dominado automaticamente.
-
-**Referências:** [fundamentos — Reliability e estabilidade estática](../../fundamentos/well-architected.md) · [AWS Builders' Library](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
+**Referência:** [Static stability no Well-Architected](../../fundamentos/well-architected.md) · [AWS Builders' Library](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
 
 [Voltar à trilha](README.md) · [Anotações](anotacoes.md)
