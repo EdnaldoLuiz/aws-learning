@@ -25,6 +25,15 @@ Uma sessão conceitual pode contar como prática conceitual se for assim registr
 
 ## Backlog
 
+### Arquitetura e resiliência — aprofundamento futuro
+
+- [ ] **High Availability:** objetivos de disponibilidade, redundância, dependências, SLO/SLA e Multi-AZ.
+- [ ] **Fault Tolerance:** escopo de falhas toleradas, degradação controlada, failover e limites de recuperação.
+- [ ] **Auto Scaling:** escalabilidade versus elasticidade, métricas, políticas, tempo de inicialização e recuperação.
+- [ ] **Static Stability:** padrões ativo-ativo/standby, capacidade de reserva em duas ou três AZs, dependências de control plane e testes de falha. [Resumo já estudado](fundamentos/well-architected.md).
+
+A tabela comparativa inicial está em [Well-Architected](fundamentos/well-architected.md). Aprofundar em sessões futuras, sem criar arquivos vazios ou registrar laboratórios não executados.
+
 Os tópicos abaixo não geram arquivos vazios. Criar nota somente com conteúdo útil, origem, fontes e ligação na navegação.
 
 - [ ] Amazon EKS: conceitos, alternativas e operação de Kubernetes.
