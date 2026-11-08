@@ -21,7 +21,9 @@ Sessão: **Operação SAA — Semana 1, Dia 1 (novembro de 2026)**.
 
 **Exemplo:** uma aplicação recebe **1.500 req/s** e opera em duas AZs. Cada AZ tem **três instâncias EC2 capazes de 500 req/s cada**, totalizando **1.500 req/s por AZ**. Se uma AZ falhar, as três instâncias sobreviventes **compartilham a carga**, sem que uma única instância precise processar todas as requisições.
 
-**Ponto para revisar:** distinguir capacidade por instância de capacidade agregada por zona e justificar o custo da capacidade reservada. A dúvida foi esclarecida na sessão, mas a compreensão deve ser verificada novamente por recuperação ativa.
+**Síntese consolidada após a discussão:** preparar os recursos antes de uma falha evita depender de provisionamento durante o incidente. Em um padrão ativo-ativo, os recursos remanescentes dividem a carga; em um padrão ativo-standby, o recurso já preparado pode assumir a função. Isso não exige que cada instância suporte o tráfego inteiro.
+
+**Compreensão demonstrada na conversa:** o conceito foi explicado corretamente com palavras próprias. **Próxima revisão:** comparar estabilidade estática, tolerância a falhas e Auto Scaling, explicando quando o custo da capacidade adicional se justifica. Isso não comprova execução prática nem domínio permanente.
 
 **Referência:** [Static stability no Well-Architected](../../fundamentos/well-architected.md) · [AWS Builders' Library](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
 
