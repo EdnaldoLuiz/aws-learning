@@ -104,6 +104,27 @@ IAM, KMS, CloudTrail, GuardDuty, WAF, Shield, Security Hub, Config
 Route 53, ELB, Auto Scaling, RDS Multi-AZ, DynamoDB Global Tables, Backup
 ```
 
+### Estabilidade estática (Static stability)
+
+**Definição:** projetar o sistema para continuar atendendo à carga prevista após uma falha esperada, usando capacidade e dependências que **já estão disponíveis**. Em uma arquitetura Multi-AZ, isso evita depender da criação de novas instâncias durante a indisponibilidade de uma AZ.
+
+**Não significa que cada instância deva suportar sozinha todo o tráfego.** As instâncias saudáveis podem compartilhar requisições por meio de um Application Load Balancer tanto em operação normal quanto após uma falha.
+
+**Exemplo didático — Spring Boot em duas AZs:**
+
+- Demanda: **1.500 requisições por segundo (req/s)**.
+- Cada AZ tem **3 instâncias EC2**, cada uma dimensionada para até **500 req/s** nas condições do exemplo.
+- Capacidade de cada AZ: **3 × 500 = 1.500 req/s**.
+- Sem falhas, as AZs dividem a carga: cerca de **750 req/s por AZ**.
+- Se uma AZ falhar, as **3 instâncias da AZ sobrevivente, juntas**, atendem aos **1.500 req/s**, sem esperar pelo lançamento de novas EC2.
+
+**Trade-off:** maior capacidade provisionada e custo em troca de resiliência imediata da capacidade de processamento. Ainda há tempo de detecção da falha e redirecionamento de tráfego; estabilidade estática não promete recuperação literalmente instantânea ou ausência de todos os outros pontos de falha.
+
+**Conceito complementar:** o *control plane* cria ou modifica recursos; o *data plane* processa o tráfego usando os recursos existentes. Uma arquitetura estaticamente estável reduz a dependência de operações do control plane durante incidentes.
+
+- [Explicação oficial: Static stability using Availability Zones (AWS Builders' Library)](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
+- [Registro de compreensão e prática de inglês — Operação SAA](../certificacoes/saa-c03/revisao.md#registro-de-compreensao--static-stability)
+
 ## Eficiência de performance (Performance Efficiency)
 
 ### Princípios Orientadores
