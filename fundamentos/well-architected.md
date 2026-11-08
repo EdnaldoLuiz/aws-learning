@@ -122,6 +122,42 @@ Route 53, ELB, Auto Scaling, RDS Multi-AZ, DynamoDB Global Tables, Backup
 
 **Conceito complementar:** o *control plane* cria ou modifica recursos; o *data plane* processa o tráfego usando os recursos existentes. Uma arquitetura estaticamente estável reduz a dependência de operações do control plane durante incidentes.
 
+#### Padrões de recuperação e dimensionamento
+
+A pergunta-chave é: **se a falha prevista acontecer agora, o que já existe consegue manter a função essencial sem provisionar infraestrutura no meio do incidente?** Não é necessário que **cada instância** suporte tudo sozinha; a capacidade **agregada dos componentes sobreviventes** é o que importa.
+
+Há duas formas recorrentes de preparação:
+
+- **Ativo-ativo:** recursos já em serviço compartilham tráfego. Se uma AZ falhar, os recursos saudáveis restantes absorvem a demanda. Exemplos: EC2/ECS atrás de ALB ou consumidores de filas SQS distribuídos por AZ.
+- **Ativo-standby:** um recurso secundário já existe e está preparado para assumir quando o principal falhar. Exemplo: RDS Multi-AZ com standby e failover automático, que ainda pode exigir tempo de detecção e promoção.
+
+**Capacidade para perder uma AZ, com demanda constante de 1.500 req/s (exemplo idealizado):**
+
+| Arquitetura | Capacidade provisionada por AZ | Capacidade total | Reserva sobre a demanda |
+| --- | --- | --- | --- |
+| 2 AZs | 1.500 req/s | 3.000 req/s | 100% |
+| 3 AZs | 750 req/s | 2.250 req/s | 50% |
+
+Em duas AZs, a única AZ sobrevivente precisa suportar toda a demanda. Em três AZs, as duas sobreviventes podem dividi-la. Os números assumem distribuição uniforme, capacidade comprovada em testes de carga e perda de apenas uma AZ. **Não são uma previsão de custo total**: entram também balanceadores, bancos, armazenamento, rede e outros componentes.
+
+**Além de capacidade:** manter o estado válido de uma configuração já carregada pode permitir que o *data plane* siga atendendo quando o *control plane* estiver indisponível, ainda que novas configurações não sejam aplicadas temporariamente. Serviços devem definir quando esse comportamento é seguro.
+
+**Limites e verificações:** identificar falhas-alvo, testar comportamento com a perda de uma AZ, verificar capacidade de ALB e dependências (banco, cache, rede, credenciais), tempo de detecção e redirecionamento, custo de recursos ociosos e necessidade de degradação controlada. O Auto Scaling continua útil para variações normais de carga e recomposição posterior; apenas **não deve ser uma dependência obrigatória para suportar a falha imediata**.
+
+### Conceitos relacionados — comparação inicial
+
+| Conceito | Pergunta central | Distinção |
+| --- | --- | --- |
+| **High Availability** | O sistema permanece disponível apesar de falhas? | Objetivo de disponibilidade da arquitetura como um todo. |
+| **Fault Tolerance** | O sistema continua operando diante de determinadas falhas? | Capacidade de tolerar falhas previstas, idealmente sem interromper a função exigida. |
+| **Auto Scaling** | A capacidade acompanha mudanças de demanda? | Ajusta recursos; provisionar novos recursos pode levar tempo. |
+| **Static Stability** | Após uma falha, os recursos/estados já existentes sustentam o serviço? | Evita depender de novas operações no plano de controle para continuar operando. |
+
+**Esses conceitos se complementam e não são sinônimos.** O aprofundamento separado está planejado no [roadmap](../ROADMAP.md#backlog).
+
+- [AWS Reliability Pillar — REL11: tolerar falhas de componentes](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/design-your-workload-to-withstand-component-failures.html)
+- [AWS — Fault tolerance and fault isolation](https://docs.aws.amazon.com/whitepapers/latest/availability-and-beyond-improving-resilience/fault-tolerance-and-fault-isolation.html)
+
 - [Explicação oficial: Static stability using Availability Zones (AWS Builders' Library)](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
 - [Registro de dúvida técnica — Operação SAA](../certificacoes/saa-c03/revisao.md)
 
