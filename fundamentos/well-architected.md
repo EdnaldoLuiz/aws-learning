@@ -123,7 +123,7 @@ Route 53, ELB, Auto Scaling, RDS Multi-AZ, DynamoDB Global Tables, Backup
 **Conceito complementar:** o *control plane* cria ou modifica recursos; o *data plane* processa o tráfego usando os recursos existentes. Uma arquitetura estaticamente estável reduz a dependência de operações do control plane durante incidentes.
 
 - [Explicação oficial: Static stability using Availability Zones (AWS Builders' Library)](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
-- [Registro de compreensão e prática de inglês — Operação SAA](../certificacoes/saa-c03/revisao.md)
+- [Registro de dúvida técnica — Operação SAA](../certificacoes/saa-c03/revisao.md)
 
 ## Eficiência de performance (Performance Efficiency)
 
