@@ -19,6 +19,12 @@ Esta trilha organiza estudo para analisar requisitos e projetar soluções segur
 
 Serviços ainda sem nota estão no [roadmap](../../ROADMAP.md#backlog). Acrescente assuntos depois de confrontar com o guia; nenhum item deste mapa representa cobertura completa da prova.
 
+## Operação SAA — diagnóstico inicial
+
+Em novembro de 2026, o diagnóstico inicial de 10 questões autorais foi concluído com **9 acertos**. O principal ponto identificado para revisão foi a diferença entre **CloudFront, Global Accelerator e Route 53**. O resultado é apenas uma linha de base de estudo: não corresponde a um simulado oficial nem comprova prontidão para o exame.
+
+As sessões seguintes devem priorizar a justificativa das escolhas arquiteturais, além da alternativa correta. Veja o [roteiro de revisão](revisao.md) e o [registro de dúvidas](erros.md).
+
 ## Sessões e registros
 
 - [Anotações](anotacoes.md): origem e observações específicas da preparação.
