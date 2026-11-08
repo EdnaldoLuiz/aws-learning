@@ -45,6 +45,6 @@ Por exemplo, com demanda de **1.500 req/s** e duas AZs contendo **três EC2 de 5
 
 **Autoavaliação:** dúvida registrada e explicação fornecida; ainda falta explicar o conceito com suas próprias palavras em uma nova tentativa. Não marcar como dominado automaticamente.
 
-**Referências:** [fundamentos — Reliability e estabilidade estática](../../fundamentos/well-architected.md#estabilidade-estática-static-stability) · [AWS Builders' Library](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
+**Referências:** [fundamentos — Reliability e estabilidade estática](../../fundamentos/well-architected.md) · [AWS Builders' Library](https://aws.amazon.com/builders-library/static-stability-using-availability-zones/)
 
 [Voltar à trilha](README.md) · [Anotações](anotacoes.md)
