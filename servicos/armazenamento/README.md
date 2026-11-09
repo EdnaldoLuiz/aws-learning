@@ -6,14 +6,16 @@ Aqui ficam as referências principais de [S3](s3.md) e [EBS](ebs.md), além de c
 | --- | --- | --- |
 | [Amazon S3](s3.md) | Objetos, classes, versionamento, lifecycle, políticas e criptografia | Assets, data lakes, backup e integração com eventos |
 | [Amazon EBS](ebs.md) | Bloco persistente zonal, snapshots incrementais, criptografia; gp2/gp3, io1/io2, st1/sc1 conforme requisitos | Disco de EC2 e banco em VM; Multi-Attach só nas condições suportadas |
-| Amazon EFS | NFS gerenciado, compartilhamento entre clientes, lifecycle e integração com Backup | Mesmos arquivos acessados por múltiplas instâncias/serviços |
-| Amazon FSx | Arquivos especializados por engine | Compatibilidade e requisitos do sistema de arquivos |
+| [Amazon EFS](arquivos-compartilhados.md) | NFS gerenciado, compartilhamento entre clientes, lifecycle e integração com Backup | Mesmos arquivos acessados por múltiplas instâncias/serviços |
+| [Amazon FSx](arquivos-compartilhados.md) | Arquivos especializados por engine | Compatibilidade e requisitos do sistema de arquivos |
 | AWS Backup | Políticas, cofres, agendamentos e cópias entre contas/regiões em recursos suportados | Governança centralizada de backups e testes de restauração |
 | Classes S3 Glacier | Instant, Flexible e Deep Archive; veja a [comparação principal](s3.md#comparação-das-classes) | Arquivamento conforme espera tolerável e custo total |
 | S3 on Outposts | Armazenamento local em Outposts com APIs S3 suportadas | Residência e processamento local |
 | EC2 Instance Store | Armazenamento temporário ligado ao host; não persiste em parada/terminação ou falha relevante | Cache/scratch e dados reconstituíveis |
 
 ## Arquivos: EFS e FSx
+
+Veja o [comparativo aprofundado de EFS e FSx](arquivos-compartilhados.md): protocolos NFS/SMB, POSIX/NTFS, opções Regional/One Zone e Single-AZ/Multi-AZ, autenticação e failover.
 
 EFS tem opções regionais e de uma AZ; não assuma que todo EFS seja multi-AZ. Modos de performance/throughput incluem combinações e condições a conferir (General Purpose/Max I/O, Elastic, Provisioned, Bursting). Camadas de acesso infrequente/arquivo e replicação têm regras próprias. Use NFS, permissões, criptografia e controle de rede adequados.
 
