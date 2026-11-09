@@ -47,6 +47,33 @@ Isso ajuda a evitar falhas no seu banco de dados e interrupções nas zonas de d
 
 ---
 
+## Alta disponibilidade não substitui recuperação de dados
+
+A escolha correta depende do problema: falha de infraestrutura, aumento de leitura ou erro lógico nos dados.
+
+| Recurso RDS | Problema principal | Comportamento relevante |
+| --- | --- | --- |
+| **Multi-AZ DB instance** | Falha da instância primária ou AZ | Standby em outra AZ e failover automático; **standby não atende leituras** |
+| **Read replica** | Escalar consultas de leitura; outros usos dependem da engine | Réplica geralmente assíncrona; não é automaticamente o standby da implantação Multi-AZ clássica |
+| **Automated backups + logs** | Recuperação dentro da janela de retenção | Permitem **Point-in-Time Recovery (PITR)** quando a modalidade/engine suporta |
+| **Manual DB snapshot** | Preservar estado de um instante | Captura um ponto de restauração; por si só não fornece failover contínuo |
+
+**Multi-AZ DB clusters** têm arquitetura distinta da instância Multi-AZ clássica: incluem instâncias leitoras e não devem ser confundidos com o standby exclusivo da implantação clássica. Verifique engine e modalidade.
+
+### RPO e RTO na prática
+
+- **RPO (Recovery Point Objective):** quantidade máxima de perda de dados tolerável, medida em tempo.
+- **RTO (Recovery Time Objective):** tempo máximo tolerável para restabelecer o serviço.
+- **PITR:** recupera o banco em um momento suportado dentro da retenção de backups, criando **nova instância**; não é um comando para desfazer em tempo real uma alteração no banco original.
+- **Failover Multi-AZ:** visa restaurar a operação após falhas de infraestrutura, não desfazer um `DELETE` incorreto propagado pelo banco.
+- **Backups:** a recuperação depende da retenção, do último ponto restaurável, de permissões, da capacidade e da validação prática do processo.
+
+**Cenários para reconhecer:** uma AZ indisponível sugere avaliar Multi-AZ; uma exclusão acidental sugere PITR/backups; uma aplicação com muitas leituras pode se beneficiar de read replicas. Combinar recursos pode ser necessário, mas não significa que todos cumpram a mesma função.
+
+- [RDS — Multi-AZ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html)
+- [RDS — Read replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
+- [RDS — Backups e Point-in-Time Recovery](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html)
+
 ## Amazon RDS Proxy
 
 O **Amazon RDS Proxy** é um **proxy de banco de dados totalmente gerenciado** que atua como intermediário entre as aplicações e a instância do RDS.
