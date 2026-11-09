@@ -19,6 +19,8 @@ Este é um ponto de partida ajustável, sem datas ou progresso pessoal inventado
 
 ## Recuperação ativa e revisões
 
+A [Operação SAA — Semana 1, Dia 1](certificacoes/saa-c03/operacao-saa.md) já possui uma sessão conceitual real registrada com **10/10 alternativas corretas**, dúvidas e revisões recomendadas. Esse histórico não significa que as etapas completas abaixo, laboratórios ou certificações tenham sido concluídos.
+
 Explique um conceito sem consulta, resolva um cenário e só depois confira referência e fonte. Registre raciocínio, correção e motivo. Intervalos como **1, 7 e 30 dias** podem orientar revisão espaçada, ajustados à disponibilidade e às dificuldades. Preencha datas depois de uma sessão real; não há calendário automático nem histórico pessoal nesta reconstrução.
 
 Uma sessão conceitual pode contar como prática conceitual se for assim registrada; ela não demonstra execução de laboratório na AWS. Registre o tipo de atividade e o resultado observado.
