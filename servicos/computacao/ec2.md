@@ -145,6 +145,20 @@ Assim nós temos um ambiente elástico que se adapta à necessidade do negócio.
 
 ---
 
+### Elasticidade, ALB e tempo de inicialização
+
+- **Escalabilidade:** capacidade de lidar com maior volume de trabalho, aumentando a potência de uma instância (*vertical*) ou o número de instâncias (*horizontal*).
+- **Elasticidade:** capacidade de **ajustar** recursos conforme a demanda sobe ou desce, com políticas baseadas em métricas ou agendamento apropriado.
+- **EC2 Auto Scaling:** mantém capacidade mínima/desejada/máxima conforme configuração, adiciona e encerra instâncias do Auto Scaling group. Em tráfego imprevisível, considerar *target tracking* com métrica adequada à aplicação, por exemplo `ALBRequestCountPerTarget`.
+- **Application Load Balancer (ALB):** roteia requisições HTTP/HTTPS para *targets* saudáveis. Ele não cria instâncias; o Auto Scaling group cuida da capacidade.
+- **Multi-AZ:** distribuir recursos entre AZs reduz riscos de indisponibilidade. Porém, ter duas AZs não prova que a capacidade sobrevivente seja suficiente durante uma falha.
+- **Tempo de reação:** uma EC2 nova precisa ser provisionada, iniciar a aplicação e passar em *health checks*; o escalonamento não é instantâneo.
+
+**Diferença para estabilidade estática:** Auto Scaling pode recompor capacidade depois de uma falha, mas um sistema que precisa manter o tráfego **sem esperar novas instâncias** deve ter capacidade previamente disponível para o cenário de falha previsto. Consulte [Static Stability](../../fundamentos/well-architected.md).
+
+- [EC2 Auto Scaling — target tracking](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html)
+- [ELB — Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html)
+
 ## 6. Características Principais
 
 O Amazon EC2 oferece uma variedade de **características** que proporcionam flexibilidade, controle e performance para suas aplicações.
