@@ -113,6 +113,24 @@ Os volumes EBS são divididos em **duas famílias principais**: **SSD** (foco em
 * Cada volume EBS é **zonal** → volumes não são multi-AZ (diferente do S3).
 * Para alta disponibilidade, combine **EBS + Snapshots + Multi-AZ (RDS/EC2 strategies)**.
 
+## EBS snapshots e restauração em outra AZ
+
+O **volume EBS** pertence a uma AZ: uma EC2 em AZ B não pode anexar diretamente um volume localizado em AZ A. O volume pode ser persistente e replicado *dentro* de sua AZ, mas não se torna Multi-AZ automaticamente.
+
+Um **EBS snapshot** cria um ponto de recuperação regional do conteúdo do volume. A partir do snapshot, é possível **criar um novo volume em outra AZ da mesma Região** e anexá-lo a uma instância compatível naquela AZ.
+
+Exemplo conceitual (não executado): `EC2 + EBS na AZ A → snapshot → novo volume EBS na AZ B → anexação à EC2 da AZ B`.
+
+- **RPO:** os dados gravados após o snapshot ainda não preservado podem não estar disponíveis na recuperação. A frequência dos snapshots precisa refletir a perda de dados tolerada.
+- **RTO:** recriar volume, inicializar recursos, montar o sistema de arquivos e validar a aplicação levam tempo. Snapshots não são um failover instantâneo.
+- **Consistência:** para aplicações com gravações ativas, planejar consistência do snapshot e, quando aplicável, coordenação dos volumes e dados da aplicação.
+- **Atenção:** EBS Multi-Attach tem restrições de tipos, instâncias e **mesma AZ**; não equivale a EFS entre AZs.
+
+Para compartilhamento NFS/SMB concorrente entre instâncias, compare [EFS e FSx](arquivos-compartilhados.md), não tente usar snapshots como sincronização em tempo real.
+
+- [AWS EBS — Snapshots](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html)
+- [AWS EBS — Volumes e AZs](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html)
+
 ## Segurança, custos e condições atuais
 
 Os números da tabela são referências históricas da nota e **não foram conferidos como limites vigentes**. Performance efetiva depende do volume, da instância, da região e dos recursos suportados. gp2 não deve ser confundido com um produto necessariamente encerrado; compare migração e requisitos.
