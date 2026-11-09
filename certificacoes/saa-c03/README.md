@@ -27,6 +27,7 @@ As sessões seguintes devem priorizar a justificativa das escolhas arquiteturais
 
 ## Sessões e registros
 
+- [Operação SAA — acompanhamento](operacao-saa.md): sessões reais, desempenho, dúvidas e revisão planejada.
 - [Anotações](anotacoes.md): origem e observações específicas da preparação.
 - [Revisão](revisao.md): recuperação ativa e comparação de cenários.
 - [Erros e dúvidas](erros.md): raciocínio, correção e fonte.
