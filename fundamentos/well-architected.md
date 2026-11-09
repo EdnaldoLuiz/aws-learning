@@ -104,6 +104,16 @@ IAM, KMS, CloudTrail, GuardDuty, WAF, Shield, Security Hub, Config
 Route 53, ELB, Auto Scaling, RDS Multi-AZ, DynamoDB Global Tables, Backup
 ```
 
+### RTO e RPO: recuperabilidade versus continuidade
+
+- **RTO (Recovery Time Objective)** mede quanto tempo de indisponibilidade é aceitável até restaurar o serviço.
+- **RPO (Recovery Point Objective)** mede a perda de dados tolerável em tempo: até que ponto do passado é aceitável recuperar o estado.
+- **Multi-AZ com failover** reduz impactos de falhas de infraestrutura, mas não desfaz automaticamente corrupção lógica ou exclusão acidental.
+- **Backups/snapshots e PITR** permitem recuperar dados, porém exigem restauração, validação e tempo operacional. Projetar apenas a frequência de backups sem testar o restore não comprova o RTO.
+- Exemplo: snapshots a cada hora podem representar perda de mudanças desde o último snapshot consistente; a recuperação ainda pode exigir criação de volumes e início da aplicação. A implementação precisa ser validada com o workload real.
+
+Consulte [RDS e PITR](../servicos/bancos-de-dados/rds.md), [snapshots EBS](../servicos/armazenamento/ebs.md) e [Versioning/CRR do S3](../servicos/armazenamento/s3.md).
+
 ### Estabilidade estática (Static stability)
 
 **Definição:** projetar o sistema para continuar atendendo à carga prevista após uma falha esperada, usando capacidade e dependências que **já estão disponíveis**. Em uma arquitetura Multi-AZ, isso evita depender da criação de novas instâncias durante a indisponibilidade de uma AZ.
