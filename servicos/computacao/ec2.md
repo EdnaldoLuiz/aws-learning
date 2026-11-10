@@ -116,7 +116,6 @@ Para questões que pedem **menor custo** sem requisitos de isolamento, Dedicated
 - [AWS Decision Guide — Choosing an EC2 purchasing option](https://docs.aws.amazon.com/decision-guides/latest/decision-guides/ec2-purchasing-options-aws-how-to-choose.html)
 - [SAA-C03 — Domain 4: cost-optimized architectures](https://docs.aws.amazon.com/pt_br/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html)
 
-
 ## 4. Capacidade Reservada ou Dedicada
 
 Além dos modelos de aquisição, o EC2 oferece opções para **reservar capacidade** ou **dedicar hosts** para necessidades específicas.
