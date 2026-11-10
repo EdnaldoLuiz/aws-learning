@@ -18,6 +18,21 @@ O **Amazon Elastic Compute Cloud (EC2)** é um serviço fundamental da AWS que o
 
 O Amazon EC2 oferece diferentes **modelos de aquisição** que permitem otimizar custos e atender a diversas necessidades de negócios. Cada modelo possui características específicas em termos de **flexibilidade**, **custo** e **compromisso**.
 
+### Resumo para decisões de custo
+
+| Opção | Compromisso e preço | Quando considerar | Atenção |
+| --- | --- | --- | --- |
+| **On-Demand Instances** | Sem compromisso longo; cobrança pelo uso | Testes, início de projeto e demanda imprevisível | Flexibilidade maior, mas tarifa-base normalmente superior às opções com desconto |
+| **Spot Instances** | Capacidade ociosa com desconto variável (até 90% sobre On-Demand) | Batch, CI/CD, workers e aplicações sem estado que toleram interrupções | **A AWS pode recuperar a capacidade**; não planeje uma aplicação crítica só com Spot sem tolerância a interrupções |
+| **Reserved Instances (RIs)** | Compromisso de **1 ou 3 anos** com condições de configuração | Uso estável e previsível, quando a reserva/desconto disponível compensa o compromisso | Não confundir desconto com garantia universal de capacidade; RIs regionais e zonais têm efeitos diferentes |
+| **Savings Plans** | Compromisso de uso em **USD/hora por 1 ou 3 anos** | Consumo relativamente previsível, com flexibilidade conforme o plano | Compromisso financeiro continua mesmo quando o uso real cai |
+| **Dedicated Instances** | Instâncias em hardware single-tenant, com custo adicional | Isolamento dedicado exigido por requisitos específicos | Não é opção de economia geral; diferente de Dedicated Hosts |
+| **EC2 Auto Scaling** | **Não é modalidade de preço** | Ajusta quantidade de instâncias à carga, inclusive em frotas mistas | Economiza ao evitar capacidade ociosa, mas cada instância segue seu próprio modelo de cobrança |
+
+**Como lembrar:** **On-Demand = flexibilidade**; **Spot = desconto com interrupção**; **Reserved/Savings Plans = desconto com compromisso**; **Dedicated = isolamento**; **Auto Scaling = elasticidade, não desconto contratual**.
+
+Os critérios não são excludentes: uma aplicação pode manter capacidade-base coberta por Savings Plans, usar On-Demand em picos e, se tolerar interrupções, adicionar Spot com Auto Scaling. Para uma startup nova sem histórico de consumo, começar por On-Demand e medir com Cost Explorer/Compute Optimizer pode evitar assumir um compromisso cedo demais.
+
 ### 3.1 On-Demand
 
 O modelo **On-Demand** oferece um método simples de pagamento, onde você paga pelo tempo de utilização das instâncias, seja por hora ou segundo, sem necessidade de compromisso inicial. É flexível e de baixo risco, ideal para aplicações com demandas variáveis.
@@ -63,6 +78,44 @@ As **Spot Instances** oferecem capacidade de computação não utilizada a preç
 Executar tarefas de processamento em lote, como renderização de vídeo ou análise de dados, que podem ser interrompidas e retomadas sem impacto significativo.
 
 ---
+
+### 3.4 Reserved Instances (RI)
+
+**Reserved Instances** são uma opção de desconto por compromisso de **1 ou 3 anos** em configurações específicas de EC2. Não precisam significar uma instância física diferente nem uma instância obrigatoriamente ligada por todo o prazo: o benefício financeiro se aplica ao uso elegível, conforme condições da RI.
+
+- **Regional RI:** desconto aplicado ao uso compatível na Região, sem garantir por si só capacidade em uma AZ específica.
+- **Zonal RI:** pode incluir reserva de capacidade na AZ selecionada, conforme atributos e regras suportados.
+- Modalidades **Standard** e **Convertible** diferem em flexibilidade de alterações e descontos. Consulte disponibilidade e limitações atuais antes de se comprometer.
+- Para novos compromissos, **Savings Plans** costumam ser a alternativa mais flexível; compare a recomendação oficial e o suporte da família de instância.
+
+**Não confundir Reserved Instances com On-Demand Capacity Reservations:** a primeira é principalmente um instrumento de preço com compromisso; a segunda reserva capacidade em AZ, e não é necessariamente desconto.
+
+### 3.5 Dedicated Instances
+
+**Dedicated Instances** rodam em hardware físico dedicado a um cliente/conta (single-tenant) por motivos de isolamento. Normalmente custam mais que a opção compartilhada equivalente. Já **Dedicated Hosts** oferecem controle/visibilidade de um host físico específico e podem atender necessidades de licenciamento vinculadas a host (BYOL).
+
+Para questões que pedem **menor custo** sem requisitos de isolamento, Dedicated Instances não costumam ser a escolha.
+
+### Cenário de prova — duas opções mais baratas
+
+> Uma startup quer reduzir ao máximo o custo de EC2. Alternativas: On-Demand, Auto Scaling, Spot, Dedicated, Reserved. Selecione duas.
+
+**Resposta usual esperada em uma questão introdutória centrada em descontos de preço: C (Spot) e E (Reserved).** Isso **não** significa que ambas sejam sempre adequadas para um site novo:
+
+- **Spot:** custo baixo, mas interrupções são possíveis; requer workload tolerante a falhas e arquitetura adequada.
+- **Reserved:** pode baratear uso previsível durante 1 ou 3 anos, mas envolve compromisso que talvez não faça sentido para uma startup sem demanda conhecida.
+- **Auto Scaling:** também pode **reduzir custo total** diminuindo instâncias desnecessárias; o enunciado é impreciso se não diferencia opção de compra de mecanismo de escalabilidade.
+- **On-Demand:** normalmente é o melhor ponto de partida para experimentar sem compromisso, não necessariamente a tarifa mais baixa.
+- **Dedicated:** atende a isolamento, não à economia genérica.
+
+**Regra de arquitetura para SAA:** identifique primeiro continuidade exigida, previsibilidade de carga, tolerância à interrupção e prazo do compromisso. Não escolha Spot apenas porque tem o menor preço anunciado.
+
+### Fontes oficiais de compra e otimização
+
+- [EC2 — Billing and purchasing options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html)
+- [AWS Decision Guide — Choosing an EC2 purchasing option](https://docs.aws.amazon.com/decision-guides/latest/decision-guides/ec2-purchasing-options-aws-how-to-choose.html)
+- [SAA-C03 — Domain 4: cost-optimized architectures](https://docs.aws.amazon.com/pt_br/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03-domain4.html)
+
 
 ## 4. Capacidade Reservada ou Dedicada
 
